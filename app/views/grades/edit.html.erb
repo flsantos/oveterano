@@ -1,0 +1,36 @@
+<% content_for :stylesheets do %>
+    	<%- stylesheets "demo", "grade" -%>
+<% end %>
+
+<div class="box bg" text-align:center;">
+	<div id="form_nova_grade">
+			
+			
+		<div class="titulo">
+			Editar grade horária
+		</div>
+		
+		<% form_for(@grade) do |f| %>
+				<% flash.each do |name, msg| %>
+		        	<%= content_tag :div, msg, :class => "flash_#{name}" %>
+		   		<% end %>
+				
+			  <p>
+			    <%= f.label :nome, 'Descrição' %><br />
+			    <%= f.text_field :nome %>
+			  </p>
+			  <p>
+			    <%= f.label :semestre, 'Semestre' %><br />
+			    <%= f.select(:semestre, options_for_select(getSemestres, :selected => @grade.semestre )) %>
+			  </p>
+			  
+			  <p>
+			    <div id="button_enviar" class="shadow_botao">
+                    <%= image_submit_tag "botao_enviar2.png", :width => "77px", :height => "27px" %>
+                </div>
+			  </p>
+		<% end %>
+		
+		<% link_to gradeshorarias_path do %> <%= image_tag("voltar.jpg")%><%end%>
+	</div>
+</div>

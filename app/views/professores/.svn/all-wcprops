@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/oveterano/svn/!svn/ver/25/app/views/professores
+END
+_posts.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/46/app/views/professores/_posts.html.erb
+END
+show.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/8/app/views/professores/show.js.erb
+END
+create_posts.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/42/app/views/professores/create_posts.js.rjs
+END
+_create_post_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/40/app/views/professores/_create_post_form.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/oveterano/svn/!svn/ver/46/app/views/professores/show.html.erb
+END
+like_dislike.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/views/professores/like_dislike.js.erb
+END
+_professor.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/views/professores/_professor.html.erb
+END

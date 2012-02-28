@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+    <title><%= h(yield(:title) || "O Veterano.com") %></title>
+
+    <link rel="shortcut icon" href="/favicon.ico" >
+    <%= stylesheet_link_tag "reset", "style", "layout", "facebox","login"%>
+    
+
+
+
+    <%= yield(:stylesheets) %>
+
+    <%= yield(:head) %>
+<!--
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+
+	    //When page loads...
+	    jQuery(".tab_content").hide(); //Hide all content
+	    jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	    jQuery(".tab_content:first").show(); //Show first tab content
+
+	    //On Click Event
+	    jQuery("ul.tabs li").click(function() {
+
+	        jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+	        jQuery(this).addClass("active"); //Add "active" class to selected tab
+	        jQuery(".tab_content").hide(); //Hide all tab content
+
+	        var activeTab = jQuery(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+	        jQuery(activeTab).fadeIn(); //Fade in the active ID content
+	        return false;
+	    });
+
+	});
+</script>
+-->
+<!--[if lt IE 7]>
+ <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24859297-1']);
+  _gaq.push(['_setDomainName', 'none']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  
+
+</script>
+
+</head>
+
+<body id="page1" onload="/*document.getElementById('all').style.display='block';*/ document.getElementById('carregando_pagina').style.display='none';">
+	<div id="carregando" style="z-index:99999; display:none;  width:90px; height:90px; position:absolute; left:42%; top:0px;"><%= image_tag("carregando.gif") %></div>
+    <div id="carregando_pagina" style="display:block;  width:100%; height:100%; position:absolute; left:44%; top:23%;"><%= image_tag("loading_sem_fundo.gif") %></div>
+	<div id="all" class="bg-bot" style="display:block;">
+			<!--<div style=" height:20px;color:white; font-weight:bold; background-color:black; margin:auto; text-align:center; padding:3px;"> Este sistema está em fase de testes. Por favor teste-o e nos dê feedbacks na parte de contato. O sistema será resetado no dia 01/08/2011, obrigado!</div>-->
+		<div id="top_banner">
+			<div id="loginButtons" class="main">
+				<div id="loginButtonsIn">
+	   		    	<%= render :partial => "usuarios/usuario_bar" %>
+				</div>
+				<div id="login_area">
+
+				</div>
+			</div>
+		</div>
+			<div class="main">
+				<!-- header -->
+				<div class="header">
+					<div class="container">
+						<%= render :partial => "application/cabecalho" %>
+					</div>
+					<div class="nav">
+						<%= render :partial => "application/menuArea" %>
+					</div>
+				</div>
+				<!-- content -->
+				<div class="section" id="content">
+					<div style=" font-size:12px;text-align:center; padding-top:5px; margin-bottom:-15px;">
+						<% flash.each do |name, msg| %>
+				        	<%= content_tag :div, msg, :class => "flash_#{name}" %>
+				   		<% end %>
+					</div>
+					<%= yield %>
+				</div>
+				<!-- footer -->
+				<div class="footer">
+					<%= render :partial => "application/footer" %>
+				</div>
+			</div>
+	</div>
+
+
+    <%= render :partial => "/sessions/login" %>
+
+
+
+
+
+    <%= javascript_include_tag 'jquery-1.4.4.min' %>
+    <script type="text/javascript">
+    	jQuery.noConflict();    
+    </script>
+    <%= javascript_include_tag 'prototype', 'facebox', 'application' %>
+    <script type="text/javascript">
+        jQuery(document).ready(function(jQuery) {
+            jQuery('a[rel*=facebox]').facebox();
+        });
+    </script>
+
+    <%= yield(:javascripts) %>
+	
+</body>
+
+</html>
+

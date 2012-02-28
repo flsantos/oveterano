@@ -1,0 +1,16 @@
+TODO LIST
+
+
+PAGINACAO:
+ FEITO "-EPISODIO 175 - TENTAR MELHORAR PAGINACAO COM HISTORY DO BUSCA DISCIPLINAS"
+ FEITO "-TENTAR DEIXAR A BUSCA DE DISCIPLINAS E PROFESSORES SEM GRAVAR NO BANCO (modelo nao persistente)"
+	   "-ARRUMAR PARA APARECER O NUMERO TOTAL DE COMENTARIOS EM CADA PARTE DOS POSTS"
+       "-"Essa disciplina ainda n�o possui nenhum coment�rio" esta aparecendo erroneamente quando fazemos um novo post que estava vazio"
+	   "-ATUALIZAR COM AJAX OS NUMEROS DAS PAGINAS, ELE NAO APARECE QUANDO VC VAI PREENCEHDNO VARIOS POSTS"
+	   "-Arrumar o cadastro de usuário"
+
+		
+
+PROFESSOR E DISCIPLINA : Quando abrir a informação de um professor, fechar a de outro que esteja aberto
+
+VERIFICAR BANDO DE DADOS: NO BANCO MOSTRA O HORARIO DA TURMA DE ICC L E M ERRADOS( DIFERENTE DO MATRICULAWEB)

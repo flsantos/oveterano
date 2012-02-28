@@ -1,0 +1,4 @@
+jQuery("#facebox #msg_erro_login").fadeIn();
+jQuery("#facebox #msg_erro_login").html("<% flash.each do |name, msg| %> <%= content_tag :div, msg %> <% end %> ");
+jQuery("#facebox #msg_erro_login").fadeOut(2000);
+

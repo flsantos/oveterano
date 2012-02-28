@@ -1,0 +1,77 @@
+10
+
+dir
+31
+https://pl3.projectlocker.com/oveterano/svn/test
+https://pl3.projectlocker.com/oveterano/svn
+
+
+
+2011-06-08T22:26:55.365194Z
+19
+lucas.braga.ribeiro@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+734b6248-f3d3-4d90-8fdf-01a759e1db3a
+
+unit
+dir
+
+test_helper.rb
+file
+
+
+
+
+2011-05-27T00:32:43.195665Z
+e297614c72684d065aef001f86188732
+2011-05-23T03:10:22.827579Z
+1
+lucas.braga.ribeiro@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1800
+
+performance
+dir
+
+functional
+dir
+
+integration
+dir
+
+fixtures
+dir
+

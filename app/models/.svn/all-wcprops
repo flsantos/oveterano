@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/oveterano/svn/!svn/ver/31/app/models
+END
+asset.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/oveterano/svn/!svn/ver/46/app/models/asset.rb
+END
+disciplina.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/46/app/models/disciplina.rb
+END
+oferta.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/oveterano/svn/!svn/ver/37/app/models/oferta.rb
+END
+grade.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/oveterano/svn/!svn/ver/19/app/models/grade.rb
+END
+professor.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/46/app/models/professor.rb
+END
+departamento.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/oveterano/svn/!svn/ver/37/app/models/departamento.rb
+END
+post.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/oveterano/svn/!svn/ver/1/app/models/post.rb
+END
+voto.rb
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/oveterano/svn/!svn/ver/1/app/models/voto.rb
+END
+usuario.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/oveterano/svn/!svn/ver/46/app/models/usuario.rb
+END
+campus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/oveterano/svn/!svn/ver/1/app/models/campus.rb
+END
+curso.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/oveterano/svn/!svn/ver/1/app/models/curso.rb
+END
+fluxo.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/oveterano/svn/!svn/ver/1/app/models/fluxo.rb
+END
+habilitacao.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/1/app/models/habilitacao.rb
+END
+horario.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/oveterano/svn/!svn/ver/1/app/models/horario.rb
+END
+disciplinasearch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/app/models/disciplinasearch.rb
+END
+reserva.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/oveterano/svn/!svn/ver/1/app/models/reserva.rb
+END
+curriculo.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/app/models/curriculo.rb
+END
+professorsearch.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/app/models/professorsearch.rb
+END
+mailer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/oveterano/svn/!svn/ver/37/app/models/mailer.rb
+END

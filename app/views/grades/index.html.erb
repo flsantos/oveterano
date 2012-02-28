@@ -1,0 +1,45 @@
+<% content_for :stylesheets do %>
+    	<%- stylesheets "jquery-ui-1.8.4.custom", "jquery.weekcalendar", "demo", "grade" -%>
+<% end %>
+
+<% content_for :javascripts do %>
+        <%- javascripts "jquery-ui-1.8.4.custom.min", "jquery.ie-select-width.min", "date", "jquery.weekcalendar", "grade" -%>
+<% end %>	
+	
+
+
+<div class="box bg">
+	
+	<div class="titulo">
+		 Grades horárias
+	</div>
+	
+	
+	
+	
+	<div id="grade_control">
+		<div style="float:left">
+		<div id="grades_combo_box" style="float:left;">
+			<%= select_tag(:grades_select, options_for_select(Grade.find_all_by_usuario_id(current_usuario.id).collect{|g| ["#{g.nome} - #{g.semestre}", g.id]}.insert(0, ["Selecione uma grade horária...", ""]), 1))  %>
+		</div>
+		<div id="loading" style="margin:2px; height:16px; width:16px;float:left;">
+		</div>
+		</div>
+		<br/>
+		<div style="margin-top:10px;">
+		
+			<% if Grade.all(:conditions => {:usuario_id => current_usuario.id}).any?%>
+				<%= link_to "Editar grades horárias", {:controller => "gradeshorarias"}, {:title => "Editar grades horárias"} %>
+			<% end %>
+			&nbsp;&nbsp;&nbsp;
+			<%= link_to "Nova grade horária", new_grade_path, {:title => "Cadastrar nova grade horária"} %>
+		</div>	
+	</div> 
+	
+	
+	<div id="grade_agenda">
+		<div style="text-align:center"><%= link_to_function "Inserir disciplina na grade horária", "novaDisciplina()"%></div>
+		<%= render :partial => 'agenda' %>
+	</div>
+
+</div>	

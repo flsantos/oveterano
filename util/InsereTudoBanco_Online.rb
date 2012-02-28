@@ -1,0 +1,1304 @@
+#Instruções:
+
+#Caso este script esteja sendo rodado para atualizar o banco, deve-se 
+#limpar as seguintes tableas do seu banco de dados, pois elas serão repopuladas e atualizadas pelo script:
+# -ofertas
+# -horarios_ofertas
+# -ofertas_professores
+# -ofertas_reservas
+
+
+
+
+
+#Para executar esse script, abra o console da sua aplicação Rails e
+#dê um require nesse arquivo.
+#Ex: require 'C:/Users/fernando/workspace_rails/oveterano/util/InsereTudoBanco_Online.rb'    
+    
+    require 'rubygems'
+    require 'nokogiri'
+    require 'open-uri'
+    require 'date'
+    require 'time'
+    
+    
+    
+    dias_da_semana = ["Domingo", "Segunda", "Ter", "Quarta", "Quinta", "Sexta", "bado"]
+
+    def getDia(dia) 
+      case dia
+          when "Domingo"
+              return 7
+          when "Segunda"
+              return 1
+          when "Terça"
+              return 2
+          when "Quarta"
+              return 3
+          when "Quinta"
+              return 4
+          when "Sexta"
+              return 5
+          when "Sábado"
+              return 6
+      end
+    end
+  
+     def getDiaSemanaModificado(dia) 
+       case dia
+          when "Domingo"
+              return "Domingo"
+          when "Segunda"
+              return "Segunda"
+          when "Ter"
+              return "Terça"
+          when "Quarta"
+              return "Quarta"
+          when "Quinta"
+              return "Quinta"
+          when "Sexta"
+              return "Sexta"
+          when "bado"
+              return "Sábado"
+       end
+     end
+  
+  
+  
+class HorarioAula
+
+  attr_accessor :dias #array de string
+  attr_accessor :horarios #array de string
+  
+  #exemplo: [ 1(segunda), 3(quarta)], [ 10:00, 11:50, 10:00, 11:50]
+  def initialize(dias, horarios)
+    @dias, @horarios = dias, horarios
+  end
+end
+
+class String
+  alias_method :old_rapidito_upcase, :upcase
+  def upcase
+    self.gsub( /\303[\240-\277]/ ) do
+      |match|
+      match[0].chr + (match[1] - 040).chr
+    end.old_rapidito_upcase
+  end
+  
+  alias_method :old_rapidito_downcase, :downcase
+  def downcase
+    self.gsub( /\303[\200-\237]/ ) do
+      |match|
+      match[0].chr + (match[1] + 040).chr
+    end.old_rapidito_downcase
+  end
+end
+
+
+
+deptoInserido         = 0
+discInserida          = 0
+horariosInseridos     = 0
+reservasInseridas     = 0
+professoresInseridos  = 0
+ofertasInseridas      = 0
+cursosInseridos       = 0
+habilInseridas        = 0
+
+
+
+
+
+#*************************INSERE OS CAMPUS NO BANCO****************************************
+
+    c = Campus.new
+      c.nome = "Darcy Ribeiro"
+      c.save
+      
+    c = Campus.new
+      c.nome = "Planaltina"
+      c.save
+      
+    c = Campus.new
+      c.nome = "Ceilândia"
+      c.save
+      
+    c = Campus.new
+      c.nome = "Gama"
+      c.save
+      
+      
+      
+      
+      puts "Inseriu Campi no Banco"
+      
+      
+      
+      
+      
+#*************************INSERE OS DEPARTAMENTOS NO BANCO****************************************
+
+
+
+
+
+
+
+
+    #Para executar esse script deve-se: Ir na pasta do projeto, e executar o comando ruby script/console para executar
+    #o console, então copie o código abaixo e cole no console que se abrirá!
+
+
+
+retries = 100
+
+    #doc = Nokogiri::HTML(File.open("util/departamento/oferta_dep822d.html"))
+    begin
+      doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dep.aspx?cod=1"), nil, 'utf-8')
+    rescue Exception => e
+      puts "Não foi possivel se conectar a página"
+      retries = retries - 1;
+      if retries > 0
+        puts "Tentando novamente..."
+        retry
+      end
+    end
+    
+    arrayNodes = []
+    #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+    #e vai guardando tudo isso em array
+    doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+        arrayNodes << node.text      
+    end
+
+    num = (arrayNodes.count)/3
+    
+    j = 0
+    num.times do |i|
+      d = Departamento.new
+            d.codigo = arrayNodes[j]
+            d.sigla = arrayNodes[j+1]
+            d.nome = arrayNodes[j+2] 
+            j = j + 3  
+        if (d.save == true)
+            deptoInserido = deptoInserido + 1
+        end
+      
+    end
+  
+    begin
+        doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dep.aspx?cod=2"), nil, 'utf-8')
+    rescue Exception => e
+      puts "Não foi possivel se conectar a página"
+      retries = retries - 1;
+      if retries > 0
+        puts "Tentando novamente..."
+        retry
+      end
+    end    
+    arrayNodes = []
+    #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+    #e vai guardando tudo isso em array
+    doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+        arrayNodes << node.text      
+    end
+
+    num = (arrayNodes.count)/3
+    
+    j = 0
+    num.times do |i|
+      d = Departamento.new
+            d.codigo = arrayNodes[j]
+            d.sigla = arrayNodes[j+1]
+            d.nome = arrayNodes[j+2] 
+            j = j + 3  
+        if (d.save == true)
+            deptoInserido = deptoInserido + 1
+        end
+      
+    end
+    
+    begin
+        doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dep.aspx?cod=3"), nil, 'utf-8')
+    rescue Exception => e
+      puts "Não foi possivel se conectar a página"
+      retries = retries - 1;
+      if retries > 0
+        puts "Tentando novamente..."
+        retry
+      end
+    end    
+    arrayNodes = []
+    #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+    #e vai guardando tudo isso em array
+    doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+        arrayNodes << node.text      
+    end
+
+    num = (arrayNodes.count)/3
+    
+    j = 0
+    num.times do |i|
+      d = Departamento.new
+            d.codigo = arrayNodes[j]
+            d.sigla = arrayNodes[j+1]
+            d.nome = arrayNodes[j+2] 
+            j = j + 3  
+        if (d.save == true)
+            deptoInserido = deptoInserido + 1
+        end
+      
+    end
+    begin
+        doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dep.aspx?cod=4"), nil, 'utf-8')
+    rescue Exception => e
+      puts "Não foi possivel se conectar a página"
+      retries = retries - 1;
+      if retries > 0
+        puts "Tentando novamente..."
+        retry
+      end
+    end   
+    arrayNodes = []
+    #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+    #e vai guardando tudo isso em array
+    doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+        arrayNodes << node.text      
+    end
+
+    num = (arrayNodes.count)/3
+    
+    j = 0
+    num.times do |i|
+      d = Departamento.new
+            d.codigo = arrayNodes[j]
+            d.sigla = arrayNodes[j+1]
+            d.nome = arrayNodes[j+2] 
+            j = j + 3  
+        if (d.save == true)
+            deptoInserido = deptoInserido + 1
+        end
+      
+    end
+
+
+
+
+    puts "Inseriu Departamentos no Banco"
+
+
+#**********************************************INSERE AS DISCIPLINAS NO BANCO****************************************
+
+
+
+cont = 0
+retries = 100
+#dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dis"
+  
+  #dir.each { |fileHtml|
+  
+   # if (fileHtml != ".") and (fileHtml != "..") and (fileHtml != "script_insere_disciplinas.rb") and (fileHtml != "script_atualiza_disciplina.rb")
+        
+   Departamento.all.each do |depto|
+     
+     puts "#{cont} ---> Inserindo Disciplinas..."
+     cont = cont + 1
+     
+     codigo = depto.codigo
+        #doc = Nokogiri::HTML(File.open("C:/Users/fernando/Desktop/Ofertas_Dados/#{fileHtml}"))
+        
+        begin
+          url = "http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dis.aspx?cod=#{codigo}"
+          doc = Nokogiri::HTML(open(url), nil, 'utf-8')
+        rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+        
+        
+        
+        
+        arrayNodes = []
+        #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+        #e vai guardando tudo isso em array
+        doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+            if node.text != ""
+                arrayNodes << node.text
+            end
+        end
+    
+        num = (arrayNodes.count)/2
+    
+        j = 0
+        num.times do |i|
+              d = Disciplina.new
+                  d.codigo = arrayNodes[j]
+                  d.nome = arrayNodes[j+1]
+                  j = j + 2  
+                  d.departamento_id = depto.id
+              if (d.save == true)
+                  discInserida = discInserida + 1
+              end
+        end
+
+   end
+
+
+
+
+
+#*****************************************************ATUALIZA DISCIPLINAS********************************************
+
+
+cont = 0
+retries = 100
+  #dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dados"
+  
+  #dir.each { |fileHtml|
+    
+   #if (fileHtml != ".") and (fileHtml != "..")
+    
+    
+      #doc = Nokogiri::HTML(File.open("C:/Users/fernando/Desktop/Ofertas_Dados/#{fileHtml}"))
+  
+    Departamento.all.each do |dpto|
+        Disciplina.find_all_by_departamento_id(dpto.id).each do |disc|
+          
+          begin
+              doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=#{disc.codigo}&dep=#{dpto.codigo}"), nil, 'utf-8')
+          rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+              if retries > 0
+                puts "Tentando novamente..."
+                retry
+              end
+          end
+            puts "#{cont} ---> Atualizando Disciplinas..."
+            cont = cont + 1
+      
+            depto = ""
+            codDisc = ""
+            creditos = ""
+            nome = ""
+            campus = ""
+        
+            doc.xpath('//table[@class = "framecinza"]//font/strong/a').each do |node|
+              depto = node.text
+              
+              arrayDepto = depto.split
+              arrayDepto.shift
+              arrayDepto.shift
+              depto = arrayDepto.join(" ")
+              break
+           end
+          
+          
+          
+            
+            doc.xpath('//table[@class = "framecinza"]//td//font/b').each do |node|
+              if node.text.match(/\d{6}/)
+                codDisc = node.text
+                
+              end
+            end
+            
+            doc.xpath('//table[@class = "framecinza"]//td/font').each do |node|
+              if node.text.match(/\d{3}-\d{3}-\d{3}-\d{3}/)
+                creditos = node.text
+              
+              end
+            end
+            
+            doc.xpath('//table[@class = "framecinza"]//td/font/a').each do |node|
+              nome = node.text
+              
+            end
+            
+            doc.xpath('//table[@class = "framecinza"]//tr[@class = "padraomenorbranco"]//td/b').each do |node|
+              if node.text.include?("Campus:")
+                campus = node.text
+                campus["Campus:"] = ""
+              end
+            end
+      
+   
+          
+      
+              disc = Disciplina.find_by_codigo(codDisc)
+      
+              if(disc != nil)
+                id_campus = nil
+                campus_obj = Campus.find_by_nome(campus)
+                if campus_obj != nil
+                    id_campus = campus_obj.id
+                end
+                
+                id_depto = nil
+                depto_obj = Departamento.find_by_nome(depto)
+                if depto_obj != nil
+                    id_depto = depto_obj.id
+                end
+                
+                disc.creditos = creditos
+                disc.departamento_id = id_depto
+                if !disc.campi.include? Campus.find(id_campus)
+                    disc.campi << Campus.find(id_campus)
+                end
+                
+                disc.save
+            end
+          
+        end
+    end
+
+
+
+
+
+
+
+
+
+#*************************INSERE OS HORARIOS NO BANCO****************************************
+
+
+
+#OBS: Nesse script, o horario de uma aula é guardado da seguinte forma:
+# Se temos uma aula, por exemplo, no horario de Terça e Quinta das 10:00 ás 11:50, 
+# o programa irá guardar 4 datas, uma Terça ás 10 (2011-08-2 10:00), Terça as 11:50 (2011-08-2 11:50) e assim
+# por diante. Ou seja, ele guarda o dia da semana de acordo com um dia do mês fixado no mes 08 de 2011.
+#Pois nesse mes o domingo  é dia 7, segunda é dia 1, terça dia 2.... e assim vai
+
+
+cont = 0
+retries = 100
+
+  #******************************************************CONFIGURE AQUI O DIRETORIO ONDE ESTÃO OS .HTML
+  #Nessa pasta só devem estar os arquivos do tipo dados_oferta...
+  #dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dados"
+  #dir.each { |fileHtml|
+    
+    #if (fileHtml != ".") and (fileHtml != "..")
+    
+    
+   Departamento.all.each do |depto|
+      Disciplina.find_all_by_departamento_id(depto.id).each do |disc|
+    
+      #doc = Nokogiri::HTML(File.open("C:/Users/fernando/Desktop/Ofertas_Dados/#{fileHtml}"))
+      begin  
+         doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=#{disc.codigo}&dep=#{depto.codigo}"), nil, 'utf-8')
+      rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+      
+      horarios = [] #array de arrays do tipo Date(alterado) -> guarda o dia, horario e duração de cada aula  
+     
+     
+      horariosdeAula = []
+      doc.xpath('//table[@class = "framecinza"]//tr/td[@class = "padrao"]').each do |node|
+          
+
+        node.child.remove
+        node.children.each do |child|
+            if (child.last_element_child != nil)
+                child.last_element_child.remove
+            end
+        end        
+        text = node.to_s.gsub(/<\/?[^>]*>/, "")
+        
+        diasdeAula = []
+        horariosdeAula = []
+        
+
+          dias_da_semana.each do |dia_da_semana|
+            while text.include?(dia_da_semana)
+              diasdeAula << getDiaSemanaModificado(dia_da_semana)
+              text[dia_da_semana] = ""
+            end
+          end
+          
+          while text =~ /\d{2}:\d{2}/
+            horariosdeAula << text[/\d{2}:\d{2}/] 
+            text[/\d{2}:\d{2}/]  = ""
+          end  
+      
+      
+          j = 0
+          diasdeAula.each do |d|
+                
+              dia = getDia(d)
+              
+              hora_ini = horariosdeAula[j]    
+              hora_fim = horariosdeAula [j+1]
+
+              h = Horario.new
+              h.dia = dia
+              h.horario_ini = hora_ini
+              h.horario_fim = hora_fim
+              if (h.save == true)
+                horariosInseridos = horariosInseridos + 1
+              end
+              
+              j = j + 2
+          end
+      
+      end
+     
+
+    end
+   #end 
+    
+    puts "#{cont} ---> Inserindo Horarios..."
+    cont = cont + 1
+  end
+  
+  
+  
+  
+  
+#*************************INSERE AS RESERVAS NO BANCO****************************************
+
+
+
+  i= 0
+  retries = 100
+  #dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dados"
+  #dir.each { |fileHtml|
+  #  if (fileHtml != ".") and (fileHtml != "..")
+     
+  Departamento.all.each do |depto|
+      Disciplina.find_all_by_departamento_id(depto.id).each do |disc|
+          
+          
+        begin  
+            doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=#{disc.codigo}&dep=#{depto.codigo}"), nil, 'utf-8')
+        rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+  
+  
+  
+  
+        reservaVagas = []
+  
+        doc.xpath('//table[@class = "framecinza"]//tr/td/div[@align = "left"]/font').each do |node|
+            subNodes= node.children
+            reserv = []
+            subNodes.each do |a|
+              if a.to_s != "<br>"
+                if (a.to_s =~ /[a-z]/)
+                  reserv << a.to_s
+                end
+              end
+            end
+            reservaVagas << reserv
+        end
+        
+        
+        reservaVagas.each do |r|
+            r.each do |res|
+              if Reserva.find_by_curso(res) == nil
+                reserva = Reserva.new
+                    reserva.curso = res
+                if (reserva.save == true)
+                    reservasInseridas = reservasInseridas + 1
+                end
+              end
+            end
+        end
+        
+        puts i
+        i=i+1
+      
+      end
+  end
+
+
+
+
+#*************************INSERE OS PROFESSORES NO BANCO****************************************
+
+
+
+
+cont = 0
+retries = 100
+
+
+#  dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dados"
+#  
+#  dir.each { |fileHtml|
+#  
+#    
+#    if (fileHtml != ".") and (fileHtml != "..")
+#    
+#      doc = Nokogiri::HTML(File.open("C:/Users/fernando/Desktop/Ofertas_Dados/#{fileHtml}"))
+#    
+#    
+    Departamento.all.each do |depto|
+        Disciplina.find_all_by_departamento_id(depto.id).each do |disc|
+          
+          begin
+            doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=#{disc.codigo}&dep=#{depto.codigo}"), nil, 'utf-8')
+          rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+            if retries > 0
+              puts "Tentando novamente..."
+              retry
+            end
+          end
+               
+                
+          puts "#{cont} ---> Inserindo Professores..."
+          cont = cont + 1
+          professores = [] #array de array de professores
+         
+          doc.xpath('//table[@class = "framecinza"]//tr/td[@class = "padraomenor"]/center').each do |node|
+              subNodes= node.children
+              prof = []
+              subNodes.each do |a|
+                if a.to_s != "<br>"
+                  prof << a.to_s
+                end       
+              end
+              professores << prof
+          end
+          
+          professores.each do |lista|
+              lista.each do |prof|
+                  prof = prof.strip
+                  professor = Professor.find_by_nome(prof)
+                  if (professor == nil)
+                    p = Professor.new
+                        p.nome = prof
+                    if (p.save == true)
+                      professoresInseridos = professoresInseridos + 1
+                    end
+                  end
+                  
+              end
+          end
+          
+          
+        end
+    end
+
+    professoradesignar = Professor.find_by_nome("A designar")
+    if (professoradesignar != nil)
+        professoradesignar.destroy
+    end
+
+
+#*************************INSERE AS OFERTAS NO BANCO****************************************
+
+
+
+
+
+
+cont = 0
+retries = 100
+  #******************************************************CONFIGURE AQUI O DIRETORIO ONDE ESTÃO OS .HTML
+  #Nessa pasta só devem estar os arquivos do tipo dados_oferta...
+  #dir = Dir.new "C:/Users/fernando/Desktop/Ofertas_Dados"
+  
+  #dir.each { |fileHtml|
+    
+    #if (fileHtml != ".") and (fileHtml != "..")
+    
+      #doc = Nokogiri::HTML(File.open("C:/Users/fernando/Desktop/Ofertas_Dados/#{fileHtml}"))
+  
+  
+  
+  Departamento.all.each do |dpto|
+      Disciplina.find_all_by_departamento_id(dpto.id).each do |disc|
+        
+      begin  
+         doc = Nokogiri::HTML(open("http://www.matriculaweb.unb.br/matriculaweb/graduacao/oferta_dados.aspx?cod=#{disc.codigo}&dep=#{dpto.codigo}"), nil, 'utf-8')
+      rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+        
+        
+  
+      depto = ""
+      codDisc = ""
+      creditos = ""
+      nome = ""
+      campus = ""   
+      turma = [] #array de string (caracteres)
+      vagas = [] #array de arrays de Integer-> guarda vagas totais, vagas ocupadas e vagas disponíveis
+      turno = [] #array de strings, Diurno, Noturno, Ambos
+      horarios = [] #array de arrays do tipo Date(alterado) -> guarda o dia, horario e duração de cada aula  
+      professores = [] #array de array de professores
+      reservaVagas = [] #array de strings(reserva/vagas ex: Ciências Sociais(Diurno)/40)
+ 
+      doc.xpath('//table[@class = "framecinza"]//font/strong/a').each do |node|
+        depto = node.text
+        arrayDepto = depto.split
+        arrayDepto.shift
+        arrayDepto.shift
+        depto = arrayDepto.join(" ")
+        break
+     end
+    
+    
+    
+      
+      doc.xpath('//table[@class = "framecinza"]//td//font/b').each do |node|
+        if node.text.match(/\d{6}/)
+          codDisc = node.text
+        end
+      end
+      
+      doc.xpath('//table[@class = "framecinza"]//td/font').each do |node|
+        if node.text.match(/\d{3}-\d{3}-\d{3}-\d{3}/)
+          creditos = node.text
+        end
+      end
+      
+      doc.xpath('//table[@class = "framecinza"]//td/font/a').each do |node|
+        nome = node.text
+      end
+      
+      doc.xpath('//table[@class = "framecinza"]//tr[@class = "padraomenorbranco"]//td/b').each do |node|
+        if node.text.include?("Campus:")
+          campus = node.text
+          campus["Campus:"] = ""
+        end
+      end
+
+      doc.xpath('//table[@class = "framecinza"]//tr/td/div[@class = "titulo"]/font/b').each do |node|
+        turma << node.text
+      end
+
+      doc.xpath('//table[@class = "framecinza"]//tr/td/b/font').each do |node|
+      
+        t = node.text
+          t['Vagas: '] = ""
+          t['Ocup.: '] = ""
+          t['Disp.: '] = ""
+        arrayIn = t.split
+        
+        vagas << arrayIn
+      end
+      
+      doc.xpath('//table[@class = "framecinza"]//tr/td/div/font').each do |node|
+        if node.text.downcase == "Diurno".downcase || node.text.downcase == "Ambos".downcase || node.text.downcase == "Noturno".downcase
+          turno << node.text
+        end
+      end
+      
+      doc.xpath('//table[@class = "framecinza"]//tr/td[@class = "padrao"]').each do |node|
+          
+
+        node.child.remove
+        text = node.to_s.gsub(/<\/?[^>]*>/, "")
+        diasdeAula = []
+        horariosdeAula = []
+
+          dias_da_semana.each do |dia_da_semana|
+            while text.include?(dia_da_semana)
+              diasdeAula << getDiaSemanaModificado(dia_da_semana)
+              text[dia_da_semana] = ""
+            end
+          end
+          
+          while text =~ /\d{2}:\d{2}/
+            horariosdeAula << text[/\d{2}:\d{2}/] 
+            text[/\d{2}:\d{2}/]  = ""
+          end
+          horarios << HorarioAula.new(diasdeAula, horariosdeAula)  
+      end
+
+      
+
+      doc.xpath('//table[@class = "framecinza"]//tr/td[@class = "padraomenor"]/center').each do |node|
+      
+          subNodes= node.children
+          
+          prof = []
+          subNodes.each do |a|
+            if a.to_s != "<br>"
+              prof << a.to_s
+            end       
+          end
+          professores << prof
+      end
+
+      doc.xpath('//table[@class = "framecinza"]//tr/td/div[@align = "left"]/font').each do |node|
+      
+          subNodes= node.children
+          
+          reserv = []
+          subNodes.each do |a|
+            if a.to_s != "<br>"
+              #if (a.to_s =~ /[a-z]/)
+                reserv << a.to_s
+                
+              #end
+            end
+          end
+          reservaVagas << reserv
+      end
+      
+   
+#puts depto
+#puts codDisc
+#puts creditos
+#puts nome
+#puts campus
+#turma.each do |t|
+#  puts "#{t} "
+#end
+#turno.each do |t|
+#  puts "#{t} "
+#end
+#vagas.each do |vag|
+#  vag.each do |v|
+#    puts "#{v} "
+#  end
+#end
+#reservaVagas.each do |r|
+#  puts "#{r} "
+#end
+
+#puts "\n\n*********************************************************\n\n"
+      
+      
+       
+      vazias = 0
+      semdisc = 0
+     
+      
+
+
+      if codDisc != "" and depto != ""
+          disciplina_id = nil
+          disciplina = nil
+          disciplina = Disciplina.find_by_codigo(codDisc)
+          if disciplina != nil        
+              disciplina_id = disciplina.id
+          end
+          
+          if (disciplina_id != nil)
+              turma.count.times { |i| #se a disciplina existe no meu banco, entao mando percorrer todas as ofertas dela
+                  
+                  oferta = nil
+                  if (Oferta.find_by_disciplina_id_and_turma(disciplina_id, turma[i]))
+                      oferta = Oferta.find_by_disciplina_id_and_turma(disciplina_id, turma[i])
+                      oferta.oferta_atual = true
+                  else
+                      oferta = Oferta.new
+                      oferta.oferta_atual = true
+                  end
+                  
+                  oferta.disciplina_id = disciplina_id
+                  oferta.turma = turma[i]
+                  oferta.turno = turno[i]
+                  
+                  v = vagas[i]
+                  oferta.vagas_totais = v[0]
+                  oferta.vagas_ocup = v[1]
+                  oferta.vagas_disp = v[2]
+                  
+                  
+                  reservas = []
+                  if reservaVagas.count != 0
+                      reservaVagas[i].each do |x|
+                        if Reserva.find_by_curso(x) != nil
+                            reservas << Reserva.find_by_curso(x)
+                        end
+                      end
+                          oferta.reservas = []
+                          oferta.reservas = reservas
+                  end
+                  
+                  profs = []
+                  professores[i].each do |x|
+                      if (Professor.find_by_nome(x) != nil)
+                          profs << Professor.find_by_nome(x)
+                      end
+                  end
+                  oferta.professores = []
+                  oferta.professores = profs
+             
+                  horariosaulas = []
+                  a = horarios[i].dias
+                  b = horarios[i].horarios
+                  diaa = 0
+                  j = 0
+                  a.each do |x|
+                      diaa = getDia(x)
+                      hora_ini = b[j]
+                      hora_fim = b[j+1]
+                      if (Horario.find_by_dia_and_horario_ini_and_horario_fim(diaa, hora_ini, hora_fim) != nil)
+                        horariosaulas << Horario.find_by_dia_and_horario_ini_and_horario_fim(diaa, hora_ini, hora_fim)
+                      end
+                      j = j + 2
+                  end
+                  oferta.horarios = []
+                  oferta.horarios = horariosaulas
+                 
+             
+                  
+                  if (oferta.save == true)
+                    ofertasInseridas = ofertasInseridas + 1
+                  end
+              }      
+          else
+              semdisc = semdisc + 1
+          end
+      else
+          vazias = vazias + 1
+      end
+      
+        
+      
+      
+      
+
+    
+      cont = cont + 1
+      puts "#{cont} ---> Inserindo Ofertas..."
+    #end
+  #}
+  
+    end 
+  end
+  
+  
+  
+  
+
+  
+  
+
+#*************************INSERE OS CURSOS NO BANCO****************************************
+
+
+
+retries = 100
+
+urlBuscaCurso = "http://www.matriculaweb.unb.br/matriculaweb/graduacao/curso_rel.aspx?cod="
+
+Campus.all.each do |campus|
+
+    begin
+      doc = Nokogiri::HTML(open("#{urlBuscaCurso}#{campus.id}"), nil, 'utf-8')
+    rescue Exception => e
+      puts "Não foi possivel se conectar a página"
+      retries = retries - 1;
+      if retries > 0
+        puts "Tentando novamente..."
+        retry
+      end
+    end
+    
+    arrayNodes = []
+    #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+    #e vai guardando tudo isso em array
+    doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoMenor"]/td').each do |node|
+        arrayNodes << node.text      
+    end
+
+    num = (arrayNodes.count)/4
+    
+    j = 0
+    num.times do |i|
+      c = Curso.new
+            c.modalidade = arrayNodes[j]
+            c.codigo = arrayNodes[j+1]
+            c.nome = arrayNodes[j+2]
+            c.turno = arrayNodes[j+3] 
+            c.campus_id = campus.id
+            j = j + 4  
+        if (c.save == true)
+          cursosInseridos = cursosInseridos + 1 
+        end
+      
+    end
+end
+
+
+
+
+
+#*************************INSERE AS HABILITACOES NO BANCO**********************************
+
+
+
+
+    
+
+urlBuscaHabilitacao = "http://www.matriculaweb.unb.br/matriculaweb/graduacao/curso_dados.aspx?cod="
+    
+cont = 0
+retries = 100
+
+   Curso.all.each do |curso|
+     
+       puts "#{cont} ---> Inserindo Habilitacoes..."
+       cont = cont + 1
+
+        begin
+            doc = Nokogiri::HTML(open("#{urlBuscaHabilitacao}#{curso.codigo}"), nil, 'utf-8')
+        rescue Exception => e
+            puts "Não foi possivel se conectar a página"
+            retries = retries - 1;
+            if retries > 0
+                puts "Tentando novamente..."
+                retry
+            end
+         end
+        
+        
+        
+        arrayNodes = []
+        #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+        #e vai guardando tudo isso em array
+        doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "PadraoBranco"]/td').each do |node|
+            if node.text != ""
+                array = node.text.split("-")
+                
+                cod = array.shift
+                nome = array.to_s.strip.upcase
+              
+              
+                arrayNodes << cod
+                arrayNodes << nome
+            end
+        end
+    
+        num = (arrayNodes.count)/2
+    
+        j = 0
+        num.times do |i|
+            h = Habilitacao.new
+                h.codigo = arrayNodes[j]
+                h.nome = arrayNodes[j+1]
+                h.curso_id = curso.id
+                j = j + 2  
+            if (h.save == true)
+              habilInseridas = habilInseridas + 1 
+            end
+        end
+   end
+
+
+#*************************INSERE OS FLUXOS E ATUALIZA AS HABILITACOES NO BANCO*************
+
+
+
+
+
+urlBuscaFluxo = "http://www.matriculaweb.unb.br/matriculaweb/graduacao/fluxo.aspx?cod="    
+
+cont = 0
+retries = 100
+   Habilitacao.all.each do |habil|
+     
+     
+     
+     puts "#{cont} ---> Inserindo Fluxos e Atualizando habilitacoes..."
+     cont = cont + 1
+    
+        begin
+            doc = Nokogiri::HTML(open("#{urlBuscaFluxo}#{habil.codigo}"), nil, 'utf-8')
+        rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+        
+        arrayNodes = []
+        #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+        #e vai guardando tudo isso em array
+        doc.xpath('//table[@class = "FrameCinza"]//tr[@class = "padraomenor"]/td').each do |node|
+            if node.text != ""
+                if node.text =~ /\d{6}/
+                    arrayNodes << node.text[/\d{6}/]
+                end
+            end
+        end
+    
+        f = nil
+        if (habil.fluxo != nil)
+          f = habil.fluxo
+        else
+          f = Fluxo.new
+        end
+            arrayNodes.each do |i|
+                if (Disciplina.find_by_codigo(i) != nil)
+                    if !f.disciplinas.include? Disciplina.find_by_codigo(i)
+                        f.disciplinas << Disciplina.find_by_codigo(i)
+                    end
+                end
+            end
+        f.habilitacao_id = habil.id    
+        f.save
+        
+        h = Habilitacao.find_by_codigo(habil.codigo)
+            h.fluxo_id = f.id
+        h.save
+
+   end
+
+
+
+
+
+
+#*************************INSERE OS CURRICULOS E ATUALIZA AS HABILITACOES NO BANCO*********
+
+
+
+
+urlBuscaFluxo = "http://www.matriculaweb.unb.br/matriculaweb/graduacao/curriculo.aspx?cod="    
+
+cont = 0
+retries = 100
+   Habilitacao.all.each do |habil|
+     
+     puts "#{cont} ---> Inserindo Curriculos e atualizando Habilitacoes..."
+     cont = cont + 1
+  
+        begin
+            doc = Nokogiri::HTML(open("#{urlBuscaFluxo}#{habil.codigo}"), nil, 'utf-8')
+        rescue Exception => e
+          puts "Não foi possivel se conectar a página"
+          retries = retries - 1;
+          if retries > 0
+            puts "Tentando novamente..."
+            retry
+          end
+        end
+        
+        
+        
+        arrayNodes = []
+        #esse comando pega do arquivo codigo, sigla, nome, codigo, sigla, nome... repetidamente
+        #e vai guardando tudo isso em array
+        doc.xpath('//table[@class = "FrameCinza"]//tr/td').each do |node|
+            if node.text != ""
+                if node.text =~ /\d{6}/
+                    arrayNodes << node.text[/\d{6}/]
+                end
+            end
+        end
+    
+        c = nil
+        if (habil.curriculo != nil)
+          c = habil.curriculo
+        else
+          c = Curriculo.new
+        end
+            arrayNodes.each do |i|
+                if (Disciplina.find_by_codigo(i) != nil)
+                  if !c.disciplinas.include? Disciplina.find_by_codigo(i)
+                      c.disciplinas << Disciplina.find_by_codigo(i)
+                  end
+                end
+            end
+        c.habilitacao_id = habil.id    
+        c.save
+        
+        h = Habilitacao.find_by_codigo(habil.codigo)
+            h.curriculo_id = c.id
+        h.save
+
+  end
+
+
+#*************************ATUALIZANDO O NOME DOS CURSOS, DISCIPLINAS, PROFESSORES E DEPARTAMENTOS*********
+
+#Rodar isso em professor, disciplina e Departamento
+Curso.all.each do |z|
+  array = z.nome.split(" ")
+  array.each do |word|
+    word[0,1] = word[0,1].upcase
+    word[1, word.size] = word[1, word.size].downcase
+  end
+  z.nome = array.join(" ")
+  puts z.nome
+  
+  z.save
+end  
+puts "Atualizou o nome dos Cursos"
+Professor.all.each do |z|
+  array = z.nome.split(" ")
+  array.each do |word|
+    word[0,1] = word[0,1].upcase
+    word[1, word.size] = word[1, word.size].downcase
+  end
+  z.nome = array.join(" ")
+  puts z.nome
+  
+  z.save
+end
+puts "Atualizou o nome dos Professores"
+Disciplina.all.each do |z|
+  array = z.nome.split(" ")
+  array.each do |word|
+    word[0,1] = word[0,1].upcase
+    word[1, word.size] = word[1, word.size].downcase
+  end
+  z.nome = array.join(" ")
+  puts z.nome
+  
+  z.save
+end
+puts "Atualizou o nome das Disciplinas"
+Departamento.all.each do |z|
+  array = z.nome.split(" ")
+  array.each do |word|
+    word[0,1] = word[0,1].upcase
+    word[1, word.size] = word[1, word.size].downcase
+  end
+  z.nome = array.join(" ")
+  puts z.nome
+  
+  z.save
+end
+puts "Atualizou o nome dos Departamentos"
+
+
+
+
+
+puts "Fim!!!"
+
+puts "\nRelatório:\n"
+puts "\nDepartamentos inseridos: #{deptoInserido}"
+puts "\nDisciplinas inseridas: #{discInserida}"
+puts "\nHorarios inseridos: #{horariosInseridos}"
+puts "\nReservas inseridas: #{reservasInseridas}"
+puts "\nProfessores inseridos: #{professoresInseridos}"
+puts "\nOfertas inseridas: #{ofertasInseridas}"
+puts "\nCursos inseridos: #{cursosInseridos}"
+puts "\nHabilitacoes inseridas: #{habilInseridas}"
+

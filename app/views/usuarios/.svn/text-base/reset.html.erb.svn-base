@@ -1,0 +1,31 @@
+<% content_for (:stylesheets) do %>
+	<%= stylesheet_link_tag "cadastrar" %>
+<% end%>
+
+<div class="box bg">
+	
+	<div id="reset_password">
+		<% form_for :usuario do |f| -%>
+			
+			
+			<div id="label">Escolha uma nova senha para <%= @usuario.email %></div>
+			<br/>
+			<div id="pass_fields">
+				<ul><li>
+					<%= f.label :password, 'Senha: ' %>
+					<%= f.password_field :password %>
+				</li></ul>
+				
+				<ul><li>
+					<%= f.label :password_confirmation, 'Confirme a Senha: ' %>
+					<%= f.password_field :password_confirmation %>
+				</li></ul>
+			</div>
+			
+            <div id="submit"> <%= image_submit_tag 'botao_enviar2.png' %></div>
+			
+		<% end -%>
+	</div>
+		
+</div>
+

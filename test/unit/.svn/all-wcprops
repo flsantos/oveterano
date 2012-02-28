@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/oveterano/svn/!svn/ver/19/test/unit
+END
+disciplina_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/oveterano/svn/!svn/ver/1/test/unit/disciplina_test.rb
+END
+oferta_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/1/test/unit/oferta_test.rb
+END
+professor_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/oveterano/svn/!svn/ver/1/test/unit/professor_test.rb
+END
+grade_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/19/test/unit/grade_test.rb
+END
+departamento_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/test/unit/departamento_test.rb
+END
+post_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/oveterano/svn/!svn/ver/1/test/unit/post_test.rb
+END
+voto_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/oveterano/svn/!svn/ver/1/test/unit/voto_test.rb
+END
+usuario_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/1/test/unit/usuario_test.rb
+END
+campus_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/1/test/unit/campus_test.rb
+END
+curso_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/test/unit/curso_test.rb
+END
+fluxo_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/test/unit/fluxo_test.rb
+END
+habilitacao_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/test/unit/habilitacao_test.rb
+END
+evento_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/19/test/unit/evento_test.rb
+END
+assets_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/44/test/unit/assets_test.rb
+END
+horario_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/1/test/unit/horario_test.rb
+END
+disciplinasearch_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/oveterano/svn/!svn/ver/1/test/unit/disciplinasearch_test.rb
+END
+ofertasearch_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/test/unit/ofertasearch_test.rb
+END
+curriculo_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/oveterano/svn/!svn/ver/1/test/unit/curriculo_test.rb
+END
+reserva_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/1/test/unit/reserva_test.rb
+END
+professorsearch_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/1/test/unit/professorsearch_test.rb
+END

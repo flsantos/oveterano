@@ -1,0 +1,39 @@
+
+function putZero(num) {
+	if ((num+'').length == 1) 
+		return '0'+num;
+	else
+		return num;
+}
+
+var horarios = new Array();
+var currentEvents = jQuery('.wc-cal-event');
+
+var eventos = '';
+if (typeof(currentEvents.data('calEvent')) == 'undefined') {
+  horarios = [];
+}
+else {
+  currentEvents.each(function(index, element) {
+    var calEvent = jQuery(this).data('calEvent');
+	novoHorario = [calEvent.start.getDay(), putZero(calEvent.start.getHours()) + ':' + putZero(calEvent.start.getMinutes()), putZero(calEvent.end.getHours()) + ':' + putZero(calEvent.end.getMinutes())];
+	horarios.push(novoHorario);
+  });
+}
+
+					  
+var url = "/ofertas/buscar?";
+url = url + jQuery.param({horario:horarios,
+					   campus:"<%=@ofertasearch[:campus]%>",
+					   departamento:"<%=@ofertasearch[:departamento]%>",
+					   professor:"<%=@ofertasearch[:professor]%>",
+					   curso_fluxo:"<%=@ofertasearch[:curso_fluxo]%>",
+					   curso_curriculo:"<%=@ofertasearch[:curso_curriculo]%>",
+					   disciplina:"<%=@ofertasearch[:disciplina]%>"
+					  });	
+
+window.location = url;				  				  
+					  
+
+javascript:parent.window.scrollTo(0,0);
+jQuery("#ofertas").html("<%= escape_javascript(image_tag("indicator.gif"));%> Buscando...");

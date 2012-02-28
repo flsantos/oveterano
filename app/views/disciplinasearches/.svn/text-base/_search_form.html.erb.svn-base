@@ -1,0 +1,35 @@
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'jquery.autocomplete' %>
+    <% end %>
+
+    <% content_for :javascripts do %>
+          <%= javascript_include_tag 'jquery.autocomplete.js' %>
+
+
+        <script type="text/javascript">
+            jQuery(document).ready( function(){
+                    jQuery('#disciplinasearch_nome').autocomplete("/disciplinasearch.js?", {selectFirst:false, delay:0});
+            });
+        </script>
+
+
+    <% end %>
+
+		<% remote_form_for :disciplinasearch, @disciplinasearch, :url => { :action => "create"}, :html => {:onsubmit => "jQuery('.ac_results').css('display', 'none');"} do |f| %>
+              <%= f.error_messages %>
+                <div id="SearchDiscFormOut">
+                    <div id="SearchDiscForm">
+                        <%= f.text_field :nome, :autocomplete => "off", :value => " Código, nome, departamento, professor...", :onfocus => "if (this.value == ' Código, nome, departamento, professor...') {this.value='';}", :onblur => "if (this.value == '') { this.value = ' Código, nome, departamento, professor...'}" %>
+                        <%= image_submit_tag "button_search.png", :onclick => "jQuery('#SearchDiscFormOut').append(\"<div id='indicator' style='text-align:center;'><img src='../images/indicator.gif' /></div>\");" %>
+                    </div>
+                </div>
+                <div id="help_link" style="margin-left:745px; margin-right:5px;">
+					<a rel="facebox" href="#disciplina_ajuda" title="Como procurar por disciplinas?" style="text-decoration:none;">
+                      <div id="botao_buscar" class="shadow_botao" style="width:33px; height:26px; background-color:#F1B80A; color:white; font-size:24px; border:1px solid #C79809; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius: 5px; padding-top:5px;text-align:center;">
+                        ?
+                      </div>
+					</a>
+				</div>
+		<% end %>
+
+		<%= render :partial => 'disciplinasearches/disciplina_ajuda' %>

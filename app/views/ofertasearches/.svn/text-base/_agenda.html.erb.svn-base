@@ -1,0 +1,21 @@
+
+
+	<div id='calendar' style = "margin :20px 20px -5px 20px;"></div>
+	
+	<div id="event_edit_container">
+		<form>
+			<input type="hidden" />
+			<ul>
+				<li>
+					<label for="start">Início de horário: </label><select name="start"><option value="">Escolha um horário de início</option></select>
+				</li>
+				<li>
+					<label for="end">Fim de horário: </label><select name="end"><option value="">Escolha um horário de fim</option></select>
+				</li>
+				
+				<li>
+					<span>Confirmar horário livre? </span>
+				</li>
+			</ul>
+		</form>
+	</div>

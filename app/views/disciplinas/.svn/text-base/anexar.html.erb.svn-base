@@ -1,0 +1,104 @@
+	<% content_for :stylesheets do %>
+    	<%= stylesheet_link_tag 'disciplina','pagination' %>
+	<% end %>
+
+    <% content_for :javascripts do %>
+        <%= javascript_include_tag 'effects', 'jquery.ba-url.min', 'pagination_history', :cache => true %>
+    <% end %>
+
+	
+
+    <div class="box bg">
+    	
+		<div id="anexar">
+	    	<div id="titulo_anexar" class="titulo">
+	    		Anexos de <%= @disciplina.nome %>
+	    	</div>
+			
+			<div id="help_link" style="margin-left:650px; font-family: Tahoma,Helvetica,sans-serif; font-weight:bold;">
+				<a rel="facebox" href="#anexo_ajuda" title="Como anexar os arquivos?" style="text-decoration:none;">
+                  <div class="shadow_botao botao_ajuda" style="text-decoration:none; width:33px; height:26px; background-color:#F1B80A; color:white; font-size:24px; border:1px solid #C79809; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius: 5px; padding-top:5px;text-align:center;">
+                    ?
+                  </div>
+                </a>
+			</div>
+			
+			<% if logged_in? %>
+				<div id="form_anexar">
+					<% form_tag({ :action => "anexando", :disciplina_id => @disciplina.id }, :multipart => true) do %>
+					
+						
+						<div>
+							<%= label_tag :data, 'Selecione um arquivo para anexar à esta disciplina: ' %><br/>
+							<%= file_field_tag :data%>
+						</div>
+						<div id="descricao_anexar">
+							<p><%= label_tag :descricao, 'Descrição: ' %><br/>
+							<%= text_field_tag :descricao%></p>
+						</div>
+						
+						<div id="button_enviar" class="shadow_botao">
+							<%= image_submit_tag "botao_enviar2.png",:width => "77px", :height => "27px" %>
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				                <div id="faca_login"> Faça o <a rel="facebox" href="#login_info" title="Logue no sistema">login</a> ou <%= link_to "crie uma conta", signup_path, { :title => "Cadastre-se" } %> para poder anexar arquivos </div>
+			<% end %>
+			
+			
+			<hr/>
+			<% if @assets.any? %>
+				<div id="anexos"><p>Anexos</p></div>
+				<div id="show_anexos">
+								
+					<table width="100%" height="100%"><tr><td align="center" valign="middle">	
+					<table align="center" cellspacing="10">
+						<tr>
+							<th>Nome</th>
+							<!--<th>Descrição</th>-->
+							<th>Tamanho</th>
+							<th>Ação</th>
+							<th>Ação</th>
+							
+						</tr>
+					
+						<% @assets.each do |asset| %>
+							<tr>
+							<td><%=h asset.data_file_name %></td>
+							<!--<td><%=h asset.descricao %></td>-->
+							<td><%=h "#{asset.data_file_size/1000}kB"  %></td>
+							<td><a rel="facebox" href="#descricao_asset<%= asset.id %>"> Descrição </a></td>
+							<% if logged_in? %>
+								<td><%= link_to "Download", :controller => "assets", :action => "show", :id => asset.id  %></td>
+								<td><%= link_to "Excluir", {:controller => "disciplinas", :action => "excluir_asset", :id => asset.id, :disciplina_id => asset.attachable_id}, {:confirm => 'Você tem certeza que deseja excluir esse documento?',  :method => :delete}%> </td>
+							<% else %>
+								<td><a rel="facebox" href="#login_info" title="Logue no sistema para fazer o download">Download</a></td>
+							<% end %>
+							</tr>
+							<div id="descricao_asset<%= asset.id%>" style="display:none; text-align:center;">
+							<div style="width:400px;">
+								Documento: <strong><%=h asset.data_file_name %></strong></br>
+								Descrição: <%=h asset.descricao %>
+							</div>
+							</div>
+						<% end %>
+					</table>
+					</td></tr></table>
+				
+				
+				</div>
+			<% else %>
+				<div id="anexos">Essa disciplina ainda não possui nenhum anexo.</div>
+			<% end %>
+			<div id="paginates" style="width:400px; margin:20px auto;">
+				<%= will_paginate @assets, :inner_window => 0, :outer_window => 0,:next_label => "Próximo", :previous_label => "Anterior" %>
+			</div>
+		</div>
+		
+		<%= render :partial => "disciplinasearches/anexo_ajuda" %>
+		
+    </div>
+
+
+

@@ -1,0 +1,13 @@
+Olá <%=h @usuario.nome %>,
+
+Seja bem vindo ao OVeterano.com
+Sua conta foi ativada com sucesso!
+
+Entre em <%=h @url%> e aproveite!
+
+
+Atenciosamente,
+
+Equipe OVeterano.com
+------------------------------------
+http://www.oveterano.com

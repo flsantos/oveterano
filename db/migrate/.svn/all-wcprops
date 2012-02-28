@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/oveterano/svn/!svn/ver/31/db/migrate
+END
+20110606190939_create_grades_ofertas_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/oveterano/svn/!svn/ver/19/db/migrate/20110606190939_create_grades_ofertas_join_table.rb
+END
+20101205143422_create_ofertas_reservas_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/oveterano/svn/!svn/ver/1/db/migrate/20101205143422_create_ofertas_reservas_join_table.rb
+END
+20101204181810_create_campi_disciplinas_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/oveterano/svn/!svn/ver/1/db/migrate/20101204181810_create_campi_disciplinas_join_table.rb
+END
+20101205143054_create_ofertas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/1/db/migrate/20101205143054_create_ofertas.rb
+END
+20101205185845_create_habilitacoes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/1/db/migrate/20101205185845_create_habilitacoes.rb
+END
+20101204162143_create_departamentos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/1/db/migrate/20101204162143_create_departamentos.rb
+END
+20101205143439_create_horarios_ofertas_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/oveterano/svn/!svn/ver/1/db/migrate/20101205143439_create_horarios_ofertas_join_table.rb
+END
+20110112134341_create_votos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/db/migrate/20110112134341_create_votos.rb
+END
+20110606190331_create_grades.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/19/db/migrate/20110606190331_create_grades.rb
+END
+20101205034631_create_professores.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/47/db/migrate/20101205034631_create_professores.rb
+END
+20101225165350_create_posts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/db/migrate/20101225165350_create_posts.rb
+END
+20101204174919_create_disciplinas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/47/db/migrate/20101204174919_create_disciplinas.rb
+END
+20101205200743_create_fluxos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/1/db/migrate/20101205200743_create_fluxos.rb
+END
+20110708215455_create_assets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/47/db/migrate/20110708215455_create_assets.rb
+END
+20110113232718_add_missing_indexes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/47/db/migrate/20110113232718_add_missing_indexes.rb
+END
+20101205044014_create_horarios.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/oveterano/svn/!svn/ver/1/db/migrate/20101205044014_create_horarios.rb
+END
+20101205202135_create_disciplinas_fluxos_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/oveterano/svn/!svn/ver/1/db/migrate/20101205202135_create_disciplinas_fluxos_join_table.rb
+END
+20110108235627_create_usuarios.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/37/db/migrate/20110108235627_create_usuarios.rb
+END
+20101205143407_create_ofertas_professores_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/oveterano/svn/!svn/ver/1/db/migrate/20101205143407_create_ofertas_professores_join_table.rb
+END
+20101205042352_create_reservas.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/oveterano/svn/!svn/ver/1/db/migrate/20101205042352_create_reservas.rb
+END
+20101205200528_create_curriculos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/oveterano/svn/!svn/ver/1/db/migrate/20101205200528_create_curriculos.rb
+END
+20101205185924_create_cursos.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/1/db/migrate/20101205185924_create_cursos.rb
+END
+20101204161623_create_campi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/db/migrate/20101204161623_create_campi.rb
+END
+20101205202123_create_curriculos_disciplinas_join_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/oveterano/svn/!svn/ver/1/db/migrate/20101205202123_create_curriculos_disciplinas_join_table.rb
+END
+20110113233513_add_finds_missing_indexes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/oveterano/svn/!svn/ver/47/db/migrate/20110113233513_add_finds_missing_indexes.rb
+END

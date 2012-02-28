@@ -1,0 +1,30 @@
+
+
+<% content_for :stylesheets do %>
+	<%= stylesheet_link_tag 'professor' %>
+    <%= stylesheet_link_tag 'pagination' %>
+<% end %>
+
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'pagination' %>	
+		<script>
+		open_prof = "" //Essa váriavel serve para guardar a ultima disciplina que foi aberta, ai quando o usuário clica para mostrar o ultimo comentário de outra disciplina, ele pega essa e manda fechar.
+		function get_open_prof() {
+			return open_prof;
+		}
+		function set_open_prof(professor) {
+			open_prof = professor;
+		}
+	</script>
+<% end %>
+
+<div class ="box bg">
+
+    <div class="titulo">Buscar professores</div>
+
+    <%= render :partial => "search_form" %>
+
+    <div id="show_professores">
+        <%= render :partial => 'show_professores' %>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+
+#login_form {
+	margin-top:55px;
+	text-align:center;
+}
+
+#login_email, #login_password {
+	margin-left:15px;
+	padding-top:-35px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333333;
+	width: 300px;
+	height: 33px;
+    line-height:33px;
+	border: 1px solid #999999;
+	text-align:left;
+
+}
+
+#login_email:focus {
+	border-color: #FFB224;
+}
+#login_password:focus {
+	border-color: #FFB224;
+}
+
+#login {
+}
+
+#login_password {
+}
+
+#flash_notice {
+    color:green;
+	/*margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+	width: 350px;
+	background-color: #93FF93;
+	border: 3px; 
+	border-color:green; 
+	border-style: solid;*/
+}
+
+#button_entrar {
+    margin-top:15px;
+	margin-bottom:30px;
+    margin-left:160px;
+}
+

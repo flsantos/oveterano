@@ -1,0 +1,13 @@
+
+
+var calEvent;
+calEvent.id = 1;
+calEvent.start = new Date("Tue Jun 07 2011 06:30:00 GMT-0300 (Hora oficial do Brasil)");
+calEvent.end = new Date("Tue Jun 07 2011 08:30:00 GMT-0300 (Hora oficial do Brasil)");
+calEvent.title = "Title"
+calEvent.body = "Body"
+jQuery("#calendar").weekCalendar("clear");
+jQuery("#calendar").weekCalendar("updateEvent", calEvent);
+
+  
+alert('i');

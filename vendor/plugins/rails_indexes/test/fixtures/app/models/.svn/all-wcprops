@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/user.rb
+END
+country.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/country.rb
+END
+address.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/address.rb
+END
+company.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/company.rb
+END
+freelancer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/freelancer.rb
+END
+gift.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/gift.rb
+END
+god.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/oveterano/svn/!svn/ver/1/vendor/plugins/rails_indexes/test/fixtures/app/models/god.rb
+END

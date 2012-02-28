@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  disciplina_id: 1
+  turma: MyString
+  turno: MyString
+  vagas_totais: 1
+  vagas_ocup: 1
+  vagas_disp: 1
+
+two:
+  disciplina_id: 1
+  turma: MyString
+  turno: MyString
+  vagas_totais: 1
+  vagas_ocup: 1
+  vagas_disp: 1

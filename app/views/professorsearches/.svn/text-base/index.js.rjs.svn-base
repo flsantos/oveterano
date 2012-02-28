@@ -1,0 +1,15 @@
+page.select('#professores div, #paginate div').each do |value|
+    value.remove
+end
+
+page.select('#indicator').each do |value|
+   value.remove
+end
+
+if @professorsearch.any?
+    page.insert_html :top, :professores, :partial => @professorsearch
+    page.insert_html :bottom, :paginate, :partial => 'paginate'
+else
+    page.insert_html :top, :professores, :partial => "professor_nao_encontrado"
+end
+

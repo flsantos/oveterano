@@ -1,0 +1,131 @@
+
+#form_cadastro {
+	margin-top:100px;
+	text-align:center;
+	width:600px;
+	margin: auto;
+	text-align:center;
+}
+
+#form_cadastro li {
+	text-align:right;
+	width:500px;
+}
+
+
+#usuario_semestre, #usuario_curso_id, #usuario_nome, #usuario_email, #usuario_login, #usuario_password, #usuario_password_confirmation {
+	width:200px;
+	margin-left:45px;
+	margin-bottom:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	width: 300px;
+	height: 33px;
+	line-height:33px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	text-align:left;
+}
+#usuario_semestre, #usuario_curso_id {
+	width: 303px;
+	height: 36px;
+	padding: 7px 7px 7px 0;
+}
+#usuario_login:hover {
+	border-color: #FFB224;
+}
+#usuario_password:hover {
+	border-color: #FFB224;
+}
+#usuario_nome:hover {
+	border-color: #FFB224;
+}
+#usuario_email:hover {
+	border-color: #FFB224;
+}
+#usuario_password_confirmation:hover {
+	border-color: #FFB224;
+}
+#usuario_semestre:hover{ border-color: #FFB224;} 
+#usuario_curso_id :hover{border-color: #FFB224;}
+
+#usuario_login:focus {
+	border-color: #FFB224;
+}
+#usuario_password:focus {
+	border-color: #FFB224;
+}
+#usuario_nome:focus {
+	border-color: #FFB224;
+}
+#usuario_email:focus {
+	border-color: #FFB224;
+}
+#usuario_password_confirmation:focus {
+	border-color: #FFB224;
+}
+#usuario_semestre:focus{ border-color: #FFB224;} 
+#usuario_curso_id :focus{border-color: #FFB224;}
+
+#flash_notice {
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+	width: 350px;
+	background-color: #93FF93;
+	border: 3px;
+	border-color:green;
+	border-style: solid;
+}
+
+#flash_error {
+	color:red;
+}
+
+#button_enviar {
+	margin: 30px auto;
+}
+#confirmacao {
+	text-align:center;
+	margin-left:15%;
+}
+
+#forgot_password {
+	width:400px;
+	margin: auto;
+	margin-top: 50px;
+	min-height:200px;
+}
+#reset_password {
+	text-align:center;
+	width:600px;
+	margin: auto;
+	margin-top: 50px;
+	min-height:200px;
+}
+#reset_password #pass_fields {
+	text-align:right;
+	width:450px;
+}
+#forgot_password #label, label{
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+#forgot_password #submit { text-align:center; margin-top:20px;}
+
+#avatar_image {
+	width:250px;
+	height:250px;
+	margin: auto;
+	margin-top: 40px;
+}
+#avatar_input {
+	margin:auto;
+	margin:5px;
+}
+#avatar_input label {
+	text-align:left;	
+}

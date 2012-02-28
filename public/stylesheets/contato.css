@@ -1,0 +1,74 @@
+
+#form_contato {
+	text-align:left;
+	margin:auto;
+	width:440px;
+}
+
+#form_contato li {
+	text-align:right;
+}
+
+#nome, #email, #mensagem {
+	margin-left:45px;
+	margin-bottom:5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	width: 300px;
+	height: 25px;
+	line-height: 25px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	text-align:left;
+}
+
+#mensagem {
+	width: 390px;
+	height: 200px;
+	resize: none;
+}
+
+#nome:hover {
+	border-color: #FFB224;
+}
+#email:hover {
+	border-color: #FFB224;
+}
+#mensagem:hover {
+	border-color: #FFB224;
+}
+
+
+#nome:focus {
+	border-color: #FFB224;
+}
+#email:focus {
+	border-color: #FFB224;
+}
+#mensagem:focus {
+	border-color: #FFB224;
+}
+
+
+#flash_notice {
+	/*margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+	width: 350px;
+	background-color: #93FF93;
+	border: 3px;
+	border-color:green;
+	border-style: solid;*/
+    color:green;
+}
+
+#flash_error {
+	color:red;
+}
+
+#button_enviar {
+    margin:20px auto;
+}
+

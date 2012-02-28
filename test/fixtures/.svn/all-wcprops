@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/oveterano/svn/!svn/ver/19/test/fixtures
+END
+fluxos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/1/test/fixtures/fluxos.yml
+END
+eventos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/oveterano/svn/!svn/ver/19/test/fixtures/eventos.yml
+END
+horarios.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/oveterano/svn/!svn/ver/1/test/fixtures/horarios.yml
+END
+habilitacoes.yml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/test/fixtures/habilitacoes.yml
+END
+campi.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/test/fixtures/campi.yml
+END
+curriculos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/oveterano/svn/!svn/ver/1/test/fixtures/curriculos.yml
+END
+reservas.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/oveterano/svn/!svn/ver/1/test/fixtures/reservas.yml
+END
+disciplinasearches.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/oveterano/svn/!svn/ver/1/test/fixtures/disciplinasearches.yml
+END
+ofertasearches.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/oveterano/svn/!svn/ver/1/test/fixtures/ofertasearches.yml
+END
+professorsearches.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/oveterano/svn/!svn/ver/1/test/fixtures/professorsearches.yml
+END
+disciplinas.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/test/fixtures/disciplinas.yml
+END
+assets.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/44/test/fixtures/assets.yml
+END
+ofertas.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/1/test/fixtures/ofertas.yml
+END
+grades.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/19/test/fixtures/grades.yml
+END
+departamentos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/oveterano/svn/!svn/ver/1/test/fixtures/departamentos.yml
+END
+posts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/test/fixtures/posts.yml
+END
+professores.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/test/fixtures/professores.yml
+END
+usuarios.yml
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/oveterano/svn/!svn/ver/1/test/fixtures/usuarios.yml
+END
+votos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/oveterano/svn/!svn/ver/1/test/fixtures/votos.yml
+END
+cursos.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/oveterano/svn/!svn/ver/1/test/fixtures/cursos.yml
+END

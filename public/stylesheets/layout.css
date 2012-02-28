@@ -1,0 +1,54 @@
+
+
+
+#page1 .header { height: 163px;}
+#page1 .col-1 {/*width:310px;*/ width:250px; margin-right:5px;}
+#page1 .col-2 {width:303px;}
+#page1 .col-3 {width:600px;}
+#page1 .divider {background:url(../images/divider-bg.gif) 315px 0px repeat-y;}
+#page1 .divider1 {background:url(../images/divider-bg.gif) 630px 0px repeat-y;}
+#page1 .divider2 {background:url(../images/divider2.gif) 630px 0px no-repeat; position: relative;}
+#page1 .divider3 {background:url(../images/divider2.gif) 315px 0px no-repeat; position: relative;}
+#page1 .divider4 {background:url(../images/divider-tail.gif) 630px 0px repeat-y; position: relative;}
+#page1 .divider5 {background:url(../images/divider-tail.gif) 315px 0px repeat-y; position: relative;}
+
+#page2 .col-1 {width:572px;}
+#page2 .col-1 .col-1 {width:280px;}
+#page2 .col-2 {width:257px;}
+#page2 .divider {background:url(../images/divider-bg.gif) 601px 0px repeat-y;}
+#page2 .divider1 {background:url(../images/divider-bg.gif) 286px 0px repeat-y;}
+
+#page3 .col-1 {width:572px;}
+#page3 .col-1 .col-1 {width:280px;}
+#page3 .col-2 {width:258px;}
+#page3 .divider {background:url(../images/divider-bg.gif) 601px 0px repeat-y;}
+#page3 .divider1 {background:url(../images/divider-bg.gif) 286px 0px repeat-y;}
+
+#page4 .col-1 {width:572px;}
+#page4 .col-1 .col-1 {width:280px;}
+#page4 .col-2 {width:258px;}
+#page4 .divider {background:url(../images/divider-bg.gif) 601px 0px repeat-y;}
+#page4 .divider1 {background:url(../images/divider-bg.gif) 286px 0px repeat-y;}
+
+#page5 .col-1 {width:572px;}
+#page5 .col-1 .col-1 {width:280px;}
+#page5 .col-2 {width:258px;}
+#page5 .divider {background:url(../images/divider-bg.gif) 601px 0px repeat-y;}
+#page5 .divider1 {background:url(../images/divider-bg.gif) 286px 0px repeat-y;}
+
+#page6 .col-1 {width:px;}
+#page6 .col-2 {width:px;}
+
+
+#page7 .col-1 {width:px;}
+#page7 .col-2 {width:px;}
+
+
+#page8 .col-1 {width:px;}
+#page8 .col-2 {width:px;}
+
+
+#page9 .col-1 {width:px;}
+#page9 .col-2 {width:px;}
+
+

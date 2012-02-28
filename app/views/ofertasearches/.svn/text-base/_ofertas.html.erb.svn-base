@@ -1,0 +1,159 @@
+<script>
+    jQuery('a[rel*=facebox]').facebox();
+</script>	
+							
+<% if @ofertas.any? %>
+	<% getOfertasSemDisciplinasRepetidas(@ofertas).each do |disciplina_id| %>
+	
+		<% disciplina = Disciplina.find(disciplina_id) %>
+
+			<div id="oferta_<%= disciplina.id %>">
+
+                <div id="oferta" class="oferta">
+
+                    <span id="exibir_ocultar_<%= disciplina.id %>" class="mouseover_negrito" style="cursor:pointer;">
+                          <div id="oferta_hover"> <%= Departamento.find(disciplina.departamento_id).sigla %>   -   <%= disciplina.nome %> </div>
+                    </span>
+
+                    <div id="conteudo">
+                        <% getOfertasPorHorario(disciplina, @ofertas).each do |oferta| %>
+                            <div class="info_oferta">
+                            	<table width="90%" border="0" class="framecinza" cellpadding="5" cellspacing="0" style="border: 1px solid #ccc; margin: 10px;">
+									<tbody>
+										<tr align="center" class="padraomenorbranco" bgcolor="#E0E0E0">
+											<td colspan="6"><b>Campus: <%= oferta.campus.first.nome if oferta.campus.first != nil%></b></td>
+										</tr>
+										<tr align="center" class="padraomenorbranco" bgcolor="#E0E0E0">
+											<td><b>Turma</b></td>
+											<td><b>Turno</b></td>
+											<td><b>Horário</b></td>
+											<td><b>Professor</b></td>
+											<td><b>Ação</b></td>
+										</tr>
+										<tr bgcolor="#FFFFFF">
+											<td width="40" bgcolor="whitesmoke" valign="middle" align="center">
+											<div><font size="4"><b><%= oferta.turma %></b></font></div>
+											<font size="1" face="Verdana," arial,="" helvetica,="" sans-serif=""><br>
+											</font></td>
+											<td width="40" nowrap="" valign="middle">
+											<div align="center"><font size="1" face="Verdana," arial,=""
+												helvetica,="" sans-serif=""><%= oferta.turno %><br>
+											<%= oferta.turno == "Diurno" ? image_tag("sol.gif") : (oferta.turno == "Noturno" ? image_tag("lua.gif") : "") %>
+											<% if oferta.turno == "Ambos"%> <%= image_tag("sol.gif") %> <%= image_tag("lua.gif") %><% end %>
+											</font></div>
+											</td>
+											<td width="140" nowrap="" class="padrao" align="center" bgcolor="whitesmoke" valign="middle">
+											<% oferta.horarios.each do |horario| %>
+												<div>
+												<b><%= getDia(horario.dia)%></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<font size="1" color="black"><b><%= horario.horario_ini %></b></font><b>&nbsp;&nbsp;&nbsp;&nbsp;<font size="1" color="brown"><%= horario.horario_fim%></font></b><br>
+												</div>
+											<% end %>											
+											</td>
+											<td valign="middle" class="padraomenor">
+											<center>
+												<%= oferta.professores.collect {|p| "  "+p.nome + "<br /><br />"} %>
+											</center>
+											</td>
+											<td width="60" align="center" valign="middle">
+												<div><a href="http://matriculaweb.unb.br/matriculaweb/graduacao/disciplina_pop.aspx?cod=<%= oferta.disciplina.codigo%>" target="_blank"> <%= image_tag("matricula_web.jpg") %></a></div><br/>
+												<% if logged_in? %>
+													<div><a rel="facebox" href="#escolhe_grade_box" title="Enviar essa disciplina para uma grade horária"><%= image_tag("schedule_icon2.png")%></a> </div>
+													<div id="escolhe_grade_box" style="display:none; text-align:center;">
+														<div class="bg box" style="text-align:center; width:400px;"  class="tamanho_menor">
+															
+															<div id="titulo_grade">
+																<p>Selecione uma grade horária</p>
+															</div>
+															<div id="list_grades" style="margin-bottom:20px; font-size:12px;">
+																<table width="100%" height="100%"><tr><td align="center" valign="middle">
+																	<table>
+																		<tr>
+																			<th>Nome</th>
+																			<th>Semestre</th>
+																			<th>Ação</th>
+																		</tr>
+																	
+																		<% @grades.each do |grade| %>
+																			<tr>
+																			<td><%=h grade.nome %></td>
+																			<td><%=h grade.semestre %></td>
+																			<td>
+																				<%= link_to 'Selecionar', {:controller => "grades", :action => "createevento", :idGrade => grade.id, :idTurma => oferta.id}, {:method => "post"} %>
+																			</td>
+																			</tr>
+																		<% end %>
+																	</table>
+																</td></tr></table>
+															</div>
+														</div>		
+													</div>	
+												<%end %>
+											</td>
+										</tr>
+										<tr bgcolor="whitesmoke">
+											<td colspan="6"><strong><font size="1" face="Verdana,"
+												arial,="" helvetica,="" sans-serif="">Reserva/Vagas </font></strong>
+											<div align="left"><font size="1" face="Verdana," arial,=""
+												helvetica,="" sans-serif=""><%= oferta.reservas.collect {|p| "  "+p.curso + "<br />"} %>
+											</font></div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+                            </div>
+                        <% end %>
+                    </div>
+
+                </div>
+            </div>
+
+            <style type="text/css">
+                #conteudo {display:none;}
+            </style>
+
+            <script type="text/javascript">
+                /*Código javascript para adicionar a funcionalidade de clicar no professor e aparecer a div em baixo*/
+
+                if (navigator.appName == 'Microsoft Internet Explorer') {
+                    jQuery("#oferta_<%= disciplina.id %> #conteudo").css("padding-bottom", "0px");
+                }
+
+
+                var tam = jQuery("#oferta_<%= disciplina.id %> .info").height(); /*Não sei pq, mas o height não pega a altura certa, por isso coloquei menos 110*/
+                tam = tam + "px";
+				
+
+
+                    jQuery("span#exibir_ocultar_<%= disciplina.id %>").toggle(
+                        function() {
+							if (get_open_oferta() != "") {
+								if (jQuery("#"+get_open_oferta()).css('display') == 'block') {
+									if (get_open_oferta() != <%= disciplina.id%>) {
+								        jQuery("#"+get_open_oferta()+" #conteudo").fadeOut(1);
+										jQuery("#"+get_open_oferta()+" #oferta").css("padding-bottom", "0px");/*Empurra as outras divs para cima*/
+				                        jQuery("#"+get_open_oferta()+" #oferta").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+									}
+							    }
+							}
+                            jQuery("#oferta_<%= disciplina.id %> #conteudo").fadeIn(); /*Exibe a div*/
+                            jQuery("#oferta_<%= disciplina.id %> #oferta").css("margin-bottom", tam ); /*Empurra as outras divs para baixo*/
+                            jQuery("#oferta_<%= disciplina.id %> #oferta").css("border-bottom", "0px"); /*Tira a bordinha de baixo*/
+							set_open_oferta("oferta_<%= disciplina.id %>");
+                        },
+                        function() {
+                             jQuery("#oferta_<%= disciplina.id %> #conteudo").fadeOut("fast", function() {
+                                 jQuery("#oferta_<%= disciplina.id %> #oferta").css("margin-bottom", "0px");/*Empurra as outras divs para cima*/
+                                 jQuery("#oferta_<%= disciplina.id %> #oferta").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+                             });
+                    });
+            </script>
+	<% end %>
+	
+	
+	
+<% else %>
+	<p><strong>Nenhuma disciplina foi encontrada</strong></p>
+<% end%>
+

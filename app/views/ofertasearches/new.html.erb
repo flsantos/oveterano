@@ -1,0 +1,83 @@
+
+	<% content_for :stylesheets do %>
+    	<%= stylesheet_link_tag "oferta", "pagination", "jquery-ui-1.8.4.custom", "jquery.weekcalendar", "demo" %>
+	<% end %>
+
+
+    <% content_for :javascripts do %>
+        <%= javascript_include_tag "jquery.ba-bbq.min", "jquery.ba-url.min", "pagination_history", "jquery.ie-select-width.min", "jquery-ui-1.8.4.custom.min", "date", "jquery.weekcalendar", "agenda", :cache => true %>
+
+            <script type="text/javascript">
+            jQuery(document).ready( function(){
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    jQuery('select#ofertasearch_campus').ieSelectWidth();
+                    jQuery('select#ofertasearch_departamento').ieSelectWidth();
+                    jQuery('select#ofertasearch_professor').ieSelectWidth();
+                    jQuery('select#ofertasearch_curso_fluxo').ieSelectWidth();
+                    jQuery('select#ofertasearch_curso_curriculo').ieSelectWidth();
+                    jQuery('select#ofertasearch_disciplina').ieSelectWidth();
+
+                    //jQuery(".combo_box").css("margin-left", "-1px");
+                }
+            });
+			open_oferta = "" //Essa váriavel serve para guardar a ultima disciplina que foi aberta, ai quando o usuário clica para mostrar o ultimo comentário de outra disciplina, ele pega essa e manda fechar.
+			function get_open_oferta() {
+				return open_oferta;
+			}
+			function set_open_oferta(oferta) {
+				open_oferta = oferta;
+			}
+        </script>
+    <% end %>
+
+
+
+
+<div class ="box bg">
+	<div class="titulo" style="height:1px;">
+		 Buscar ofertas de disciplinas
+	</div>
+	<% if logged_in? %>
+		<div id="minhas_grades"title="Minhas grades horárias" style="text-align:center;"><% link_to :controller => "grades", :action => "index" do %> <div id="minhas_grades"><%= image_tag ("schedule_icon.png")%></div>Grade Horária <% end %></div>
+	<% else %>
+		<div class="faca_login" style="margin-top:65px;"> Faça o <a rel="facebox" href="#login_info" title="Logue no sistema">login</a> ou <%= link_to "crie uma conta", signup_path, { :title => "Cadastre-se" } %> para gerenciar suas grades horárias </div>		
+	<% end %>
+	
+	<hr/>
+
+	<div id="ofertas">
+	</div>
+	<% if @ofertas %>
+		<!--<div id='numero_disc'> Total de disciplinas encontradas: <%= getOfertasSemDisciplinasRepetidas(@ofertas_sem_pag).size %></div>--> 
+		<!--%= render :partial => "ofertas" %-->
+		<!--%= render :partial => "paginate" %-->
+		<% content_for :javascripts do %>
+			<% if @ofertas %>
+				<script>
+					jQuery("#ofertas").html("<div id='numero_disc'>Total de disciplinas encontradas: <%= getOfertasSemDisciplinasRepetidas(@ofertas_sem_pag).size %></div> <%= escape_javascript(render("ofertas")) %> <%= escape_javascript(render("paginate")) %>");
+				</script>
+			<% end %>	
+		<% end %>
+	<% end %>
+	
+	<div id="oferta_form_all">
+		<div id="ofertasearch_form">
+			<div id="help_link" style="margin-left: 745px;">
+				<a rel="facebox" href="#oferta_ajuda" title="Como procurar ofertas?" style="text-decoration:none;">
+                  <div class="shadow_botao botao_ajuda" style="text-decoration:none; width:33px; height:26px; background-color:#F1B80A; color:white; font-size:24px; border:1px solid #C79809; -moz-border-radius:5px; -webkit-border-radius: 5px; border-radius: 5px; padding-top:5px;text-align:center;">
+                    ?
+                  </div>
+                </a>
+			</div>
+		    <div id="search_form">
+		        <%= render :partial => "search_form" %>
+		    </div>
+		    <div id="agenda">
+		        <%= render :partial => 'agenda' %>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<%= render :partial => "/ofertasearches/oferta_ajuda" %>
+

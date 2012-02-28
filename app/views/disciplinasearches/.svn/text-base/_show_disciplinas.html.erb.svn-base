@@ -1,0 +1,8 @@
+<div class="tabela">
+	<!--Essa div é onde o java script inserirá a busca via Ajax-->
+	<div id="disciplinas">
+	
+	</div>
+</div>
+
+<div id="paginate"> </div>

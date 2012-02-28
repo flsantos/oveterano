@@ -1,0 +1,29 @@
+
+
+<% content_for :stylesheets do %>
+	<%= stylesheet_link_tag 'disciplina' %>
+    <%= stylesheet_link_tag 'pagination' %>
+<% end %>
+
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'pagination' %>
+	<script>
+		open_disc = "" //Essa váriavel serve para guardar a ultima disciplina que foi aberta, ai quando o usuário clica para mostrar o ultimo comentário de outra disciplina, ele pega essa e manda fechar.
+		function get_open_disc() {
+			return open_disc;
+		}
+		function set_open_disc(disciplina) {
+			open_disc = disciplina;
+		}
+	</script>
+<% end %>
+
+<div class ="box bg">
+
+    <div class="titulo" id="teste2">Buscar disciplinas</div>
+	<%= render :partial => "search_form" %>
+
+    <div id="show_disciplinas">
+        <%= render :partial => 'show_disciplinas' %>
+    </div>
+</div>

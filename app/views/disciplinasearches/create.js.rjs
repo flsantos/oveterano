@@ -1,0 +1,14 @@
+page.select('#disciplinas div, #paginate div').each do |value|
+    value.remove
+end
+
+page.select('#indicator').each do |value|
+   value.remove
+end
+
+if @disciplinasearch.any?
+    page.insert_html :top, :disciplinas, :partial => @disciplinasearch
+    page.insert_html :bottom, :paginate, :partial => 'paginate'
+else
+    page.insert_html :top, :disciplinas, :partial => "disciplina_nao_encontrada"
+end

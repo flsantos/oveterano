@@ -1,0 +1,109 @@
+
+    <% div_for professor do %>
+
+            <div id="prof" >
+
+
+				<div class="font2">
+                <span id="exibir_ocultar_<%= professor.id %>" class="mouseover_negrito" style="cursor:pointer;">
+                      <span style="font-weight:bold;"><%= professor.departamento_aprox.sigla %></span> - <%=h professor.nome%>
+                </span>
+				</div>
+
+                <div id="conteudo">
+                    <div id="nota" style="float:right">
+                      <div id="avaliacao_professor" class="fundo1" title ="Nota do professor">
+                        <div style="margin-top:5px;">
+                       		Avaliação<br/><span style="font-size:20px; vertical-align:middle;"><%= getNota(professor.id) %></span>
+						</div>
+                      </div>
+                    </div>
+                  
+                <p>Departamento: <%= professor.departamento_aprox.nome %></p>
+
+
+                <div class="ultimo_comentario">
+                    <% if Post.find_all_by_alias_and_alias_id(2, professor.id).last %>
+                              <p>
+                                  <span style="font-weight:bold;">Último comentário:</span>
+                                  	<% 
+										texto = ""
+										msg = Post.find_all_by_alias_and_alias_id(2, professor.id).last.mensagem
+										if !msg.include? " "
+											texto = ""
+											msg.split(/(.{70})/).each do |slice|
+												texto << slice
+												texto << "\n"
+											end
+										else
+											texto = msg
+										end
+									%>
+                                  <%= texto %>
+                              </p>
+                    <% else  %>
+                              <p>
+                                  Esse professor ainda não possui nenhum comentário.
+                                  <br/>
+                                  Deixe sua opinião
+                                      <% link_to :controller => "professores", :action => "show" , :id => professor do %>
+                                          <span style="color:#F1B80A; font-size:12px; font-weight:bold;">aqui</span>
+                                      <% end %>
+                              </p>
+                    <% end %>
+                </div>
+
+                <div style="float:right;">
+                    <div id="comentarios_out" style="height:45px; width:121px;">
+                          <% link_to :controller => "professores", :action => "show" , :id => professor do %>
+						  	<div id="link_comentarios" class="fundo1" title="Visualizar professor"> <div style="height:7px;"></div>Comentários</div>  
+						  <% end %>
+                    </div>
+                </div>
+                  
+                </div>
+
+            </div>
+
+        <style type="text/css">
+            #conteudo {display:none;}
+        </style>
+
+        <script type="text/javascript">
+            /*Código javascript para adicionar a funcionalidade de clicar no professor e aparecer a div em baixo*/
+
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                jQuery("#professor_<%= professor.id %> #conteudo").css("padding-bottom", "0px");
+            }
+
+
+            var tam = jQuery("#professor_<%= professor.id %> #conteudo").height() + 30; /*Não sei pq, mas o height não pega a altura certa, por isso coloquei mais 30*/
+            tam = tam + "px";
+
+
+                jQuery("span#exibir_ocultar_<%= professor.id %>").toggle(
+                    function() {
+						if (get_open_prof() != "") {
+							if (jQuery("#"+get_open_prof()).css('display') == 'block') {
+								if (get_open_prof() != <%= professor.id%>) {
+							        jQuery("#"+get_open_prof()+" #conteudo").fadeOut(1);
+									jQuery("#"+get_open_prof()).css("padding-bottom", "0px");/*Empurra as outras divs para cima*/
+			                        jQuery("#"+get_open_prof()+" #prof").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+								}
+						    }
+						}
+                        jQuery("#professor_<%= professor.id %> #conteudo").fadeIn("fast"); /*Exibe a div*/
+                        jQuery("#professor_<%= professor.id %>").css("padding-bottom", tam ); /*Empurra as outras divs para baixo*/
+                        jQuery("#professor_<%= professor.id %> #prof").css("border-bottom", "0px"); /*Tira a bordinha de baixo*/
+						set_open_prof("professor_<%= professor.id %>");
+                    },
+                    function() {
+                         jQuery("#professor_<%= professor.id %> #conteudo").fadeOut("fast", function() {
+                             jQuery("#professor_<%= professor.id %>").css("padding-bottom", "0px");/*Empurra as outras divs para cima*/
+                             jQuery("#professor_<%= professor.id %> #prof").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+                         });
+                });
+        </script>
+
+
+    <% end %>

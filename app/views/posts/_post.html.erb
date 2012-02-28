@@ -1,0 +1,44 @@
+<% div_for(post, :class => "fundo_post1") do %>  
+	<div id="comentario">
+		<div> <span style=" float:right; font-style:italic;"> em <%= post.created_at.strftime("%d de %B, %Y às %H:%M ")%> </span> </div>
+		<div id="avatar_nome">
+			<div id="autor_comentario"><span><%= link_to Usuario.find(post.autor_id).nome, Usuario.find(post.autor_id) %></span></div>	
+   		    <div id="avatar_imagem">
+   		    	<% link_to Usuario.find(post.autor_id) do %>
+   		    		<%= image_tag Usuario.find(post.autor_id).avatar.url(:small) %>
+				<% end %>
+				<br/>
+			</div>
+		</div> 
+		<div id="msg" style="font-size:11px;">
+			<% 
+				texto = ""
+				if !post.mensagem.include? " "
+					texto = ""
+					post.mensagem.split(/(.{65})/).each do |slice|
+						texto << slice
+						texto << "\n"
+					end
+				else
+					texto = post.mensagem
+				end
+				texto = texto.gsub(/\n/, "<br/>")
+			%>
+		<p><%= texto %></p>
+		</div>
+		<br/>
+		<div id="msg_footer">
+			<span style="float:right;">
+			<!--Comentado à <%= time_ago_in_words(post.created_at) %> atrás-->
+			<% if logged_in? %>
+				<% if current_usuario.id == post.autor_id %>
+					 <%= link_to 'Excluir', post, :confirm => 'Excluir comentário?', :method => :delete %>
+				<% end %>
+			<% end %>
+			<% div_denuncia = "denuncia_comentario_".concat(post.id.to_s) %>
+			<%= link_to_remote 'Denunciar', :update => div_denuncia, :confirm => 'Denunciar comentário?', :loading => "jQuery('##{div_denuncia}').html('<img alt=\"Carregando...\" src=\"/images/indicator.gif\">');", :url => {:action => "denuncia", :post_id => post.id} %>
+			<div id="<%= div_denuncia %>"></div>
+			</span>
+		</div>
+	</div>
+<% end %>

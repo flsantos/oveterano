@@ -1,0 +1,175 @@
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:47:17) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 208ms (View: 206, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:47:21) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:47:25) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+
+ActionView::TemplateError (Mysql::Error: Table 'ofertaweb_unb_production.campi' doesn't exist: SELECT * FROM `campi` ) on line #34 of app/views/ofertasearches/_search_form.html.erb:
+31: 
+32:             <%= f.label :campus, "Campus" %>
+33:             <div class="combo_box">
+34:                 <%= f.select(:campus, Campus.all.map { |c| [c.nome] },  :include_blank => true )%>
+35:             </div>
+36: 
+37:             <%= f.label :departamento %>
+
+    app/views/ofertasearches/_search_form.html.erb:34
+    app/views/ofertasearches/_search_form.html.erb:28
+    app/views/ofertasearches/new.html.erb:15
+    -e:1:in `load'
+    -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:47:52) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+
+ActionView::TemplateError (Mysql::Error: Table 'ofertaweb_unb_production.campi' doesn't exist: SELECT * FROM `campi` ) on line #34 of app/views/ofertasearches/_search_form.html.erb:
+31: 
+32:             <%= f.label :campus, "Campus" %>
+33:             <div class="combo_box">
+34:                 <%= f.select(:campus, Campus.all.map { |c| [c.nome] },  :include_blank => true )%>
+35:             </div>
+36: 
+37:             <%= f.label :departamento %>
+
+    app/views/ofertasearches/_search_form.html.erb:34
+    app/views/ofertasearches/_search_form.html.erb:28
+    app/views/ofertasearches/new.html.erb:15
+    -e:1:in `load'
+    -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:48:04) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:48:08) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+
+ActionView::TemplateError (Mysql::Error: Table 'ofertaweb_unb_production.campi' doesn't exist: SELECT * FROM `campi` ) on line #34 of app/views/ofertasearches/_search_form.html.erb:
+31: 
+32:             <%= f.label :campus, "Campus" %>
+33:             <div class="combo_box">
+34:                 <%= f.select(:campus, Campus.all.map { |c| [c.nome] },  :include_blank => true )%>
+35:             </div>
+36: 
+37:             <%= f.label :departamento %>
+
+    app/views/ofertasearches/_search_form.html.erb:34
+    app/views/ofertasearches/_search_form.html.erb:28
+    app/views/ofertasearches/new.html.erb:15
+    -e:1:in `load'
+    -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:48:29) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+
+ActionView::TemplateError (Mysql::Error: Table 'ofertaweb_unb_production.campi' doesn't exist: SELECT * FROM `campi` ) on line #34 of app/views/ofertasearches/_search_form.html.erb:
+31: 
+32:             <%= f.label :campus, "Campus" %>
+33:             <div class="combo_box">
+34:                 <%= f.select(:campus, Campus.all.map { |c| [c.nome] },  :include_blank => true )%>
+35:             </div>
+36: 
+37:             <%= f.label :departamento %>
+
+    app/views/ofertasearches/_search_form.html.erb:34
+    app/views/ofertasearches/_search_form.html.erb:28
+    app/views/ofertasearches/new.html.erb:15
+    -e:1:in `load'
+    -e:1
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:48:52) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 49ms (View: 47, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:48:58) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 5063ms (View: 5063, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:49:05) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 13ms (View: 13, DB: 0) | 200 OK [http://127.0.0.1/]
+
+
+Processing InicioController#index (for 127.0.0.1 at 2011-02-11 19:49:14) [GET]
+Rendering template within layouts/application
+Rendering inicio/index
+Completed in 17ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:49:17) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+Completed in 294ms (View: 243, DB: 47) | 200 OK [http://localhost/ofertasearches/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-11 19:49:21) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/oferta.js" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:52:06) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+Completed in 241ms (View: 206, DB: 34) | 200 OK [http://localhost/ofertasearches/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-11 19:52:19) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/oferta.js" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)
+
+
+Processing OfertasearchesController#new (for 127.0.0.1 at 2011-02-11 19:53:34) [GET]
+Rendering template within layouts/application
+Rendering ofertasearches/new
+Completed in 245ms (View: 207, DB: 38) | 200 OK [http://localhost/ofertasearches/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-11 19:53:47) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/oferta.js" with {:method=>:get}):
+  -e:1:in `load'
+  -e:1
+
+Rendering rescues/layout (not_found)

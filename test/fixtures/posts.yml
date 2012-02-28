@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mensagem: MyText
+  alias: 1
+  alias_id: 1
+
+two:
+  mensagem: MyText
+  alias: 1
+  alias_id: 1

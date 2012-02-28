@@ -1,0 +1,59 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  
+  
+en:
+   activerecord:
+       errors:
+           messages:
+               blank: " deve ser preenchido"
+               too_short: " muito curto"
+
+               
+en: 
+  datetime:
+    distance_in_words:
+      half_a_minute: "meio minuto"
+      less_than_x_seconds:
+        one:   "menos de um segundo"
+        other: "menos %{count} segundos"
+      x_seconds:
+        one:   "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one:   "menos de um minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one:   "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one:   "cerca de 1 hora"
+        other: "cerca de %{count} horas"
+      x_days:
+        one:   "1 dia"
+        other: "%{count} dias"
+      about_x_months:
+        one:   "cerca de 1 mês"
+        other: "cerca de %%{count} meses"
+      x_months:
+        one:   "1 mês"
+        other: "%{count} meses"
+      about_x_years:
+        one:   "cerca de 1 ano"
+        other: "cerca de %{count} anos"
+      over_x_years:
+        one:   "mais de 1 ano"
+        other: "mais %{count} anos"
+      almost_x_years:
+        one:   "quase 1 ano"
+        other: "quase %{count} anos"
+    prompts:
+      year:   "Ano"
+      month:  "Mês"
+      day:    "Dia"
+      hour:   "Hora"
+      minute: "Minuto"
+      second: "Segundo"

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/oveterano/svn/!svn/ver/25/app/views/disciplinas
+END
+_posts.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/46/app/views/disciplinas/_posts.html.erb
+END
+show.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/6/app/views/disciplinas/show.js.erb
+END
+create_posts.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/38/app/views/disciplinas/create_posts.js.rjs
+END
+_create_post_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/38/app/views/disciplinas/_create_post_form.html.erb
+END
+_disciplina.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/46/app/views/disciplinas/_disciplina.html.erb
+END
+anexar.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/46/app/views/disciplinas/anexar.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/oveterano/svn/!svn/ver/46/app/views/disciplinas/show.html.erb
+END
+like_dislike.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/views/disciplinas/like_dislike.js.erb
+END

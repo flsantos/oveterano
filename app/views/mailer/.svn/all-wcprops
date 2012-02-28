@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/oveterano/svn/!svn/ver/18/app/views/mailer
+END
+envia_email_confirmacao.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/46/app/views/mailer/envia_email_confirmacao.erb
+END
+envia_email_confirmacao_html.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/oveterano/svn/!svn/ver/46/app/views/mailer/envia_email_confirmacao_html.html.erb
+END
+envia_email_recuperacao.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/46/app/views/mailer/envia_email_recuperacao.erb
+END
+envia_email_conta_ativada.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/oveterano/svn/!svn/ver/46/app/views/mailer/envia_email_conta_ativada.erb
+END

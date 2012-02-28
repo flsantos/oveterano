@@ -1,0 +1,18 @@
+class CreateOfertas < ActiveRecord::Migration
+  def self.up
+    create_table :ofertas do |t|
+      t.integer :disciplina_id
+      t.string :turma
+      t.string :turno
+      t.integer :vagas_totais
+      t.integer :vagas_ocup
+      t.integer :vagas_disp
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :ofertas
+  end
+end

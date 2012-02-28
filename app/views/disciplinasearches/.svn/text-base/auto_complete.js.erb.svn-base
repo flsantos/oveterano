@@ -1,0 +1,1 @@
+<%= render :text => @disciplinasearches.map{|x| x.nome}.join("\n")  %>

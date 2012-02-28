@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/oveterano/svn/!svn/ver/23/app/views/sessions
+END
+_login.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/oveterano/svn/!svn/ver/46/app/views/sessions/_login.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/oveterano/svn/!svn/ver/1/app/views/sessions/new.html.erb
+END
+create.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/23/app/views/sessions/create.js.erb
+END

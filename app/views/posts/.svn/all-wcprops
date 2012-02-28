@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/oveterano/svn/!svn/ver/1/app/views/posts
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/app/views/posts/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/app/views/posts/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/oveterano/svn/!svn/ver/1/app/views/posts/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/1/app/views/posts/show.html.erb
+END
+_post.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/oveterano/svn/!svn/ver/46/app/views/posts/_post.html.erb
+END

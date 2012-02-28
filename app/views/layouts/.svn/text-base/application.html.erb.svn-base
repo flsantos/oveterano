@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+    <title><%= h(yield(:title) || "O Veterano.com") %></title>
+
+    <link rel="shortcut icon" href="/favicon.ico" >
+    <%= stylesheet_link_tag "reset", "style", "layout", "facebox","login"%>
+    
+
+
+
+    <%= yield(:stylesheets) %>
+
+    <%= yield(:head) %>
+<!--
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+
+	    //When page loads...
+	    jQuery(".tab_content").hide(); //Hide all content
+	    jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	    jQuery(".tab_content:first").show(); //Show first tab content
+
+	    //On Click Event
+	    jQuery("ul.tabs li").click(function() {
+
+	        jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+	        jQuery(this).addClass("active"); //Add "active" class to selected tab
+	        jQuery(".tab_content").hide(); //Hide all tab content
+
+	        var activeTab = jQuery(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+	        jQuery(activeTab).fadeIn(); //Fade in the active ID content
+	        return false;
+	    });
+
+	});
+</script>
+-->
+<!--[if lt IE 7]>
+ <script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js"></script>
+<![endif]-->
+</head>
+
+<body id="page1" onload="/*document.getElementById('all').style.display='block';*/ document.getElementById('carregando_pagina').style.display='none';">
+	<div id="carregando" style="z-index:99999; display:none;  width:90px; height:90px; position:absolute; left:42%; top:0px;"><%= image_tag("carregando.gif") %></div>
+    <div id="carregando_pagina" style="display:block;  width:100%; height:100%; position:absolute; left:44%; top:23%;"><%= image_tag("loading_sem_fundo.gif") %></div>
+	<div id="all" class="bg-bot" style="display:block;">
+		<div id="top_banner">
+			<div id="loginButtons" class="main">
+				<div id="loginButtonsIn">
+	   		    	<%= render :partial => "usuarios/usuario_bar" %>
+				</div>
+				<div id="login_area">
+
+				</div>
+			</div>
+		</div>
+			<div class="main">
+				<!-- header -->
+				<div class="header">
+					<div class="container">
+						<%= render :partial => "application/cabecalho" %>
+					</div>
+					<div class="nav">
+						<%= render :partial => "application/menuArea" %>
+					</div>
+				</div>
+				<!-- content -->
+				<div class="section" id="content">
+					<div style="text-align:center; padding-top:5px; margin-bottom:-15px;">
+						<% flash.each do |name, msg| %>
+				        	<%= content_tag :div, msg, :class => "flash_#{name}" %>
+				   		<% end %>
+					</div>
+					<%= yield %>
+				</div>
+				<!-- footer -->
+				<div class="footer">
+					<%= render :partial => "application/footer" %>
+				</div>
+			</div>
+	</div>
+
+<!--osc3.template-help.com -->
+<!--
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7078796-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+-->
+
+
+    <%= render :partial => "/sessions/login" %>
+
+
+
+
+
+    <%= javascript_include_tag 'jquery-1.4.4.min' %>
+    <script type="text/javascript">
+    	jQuery.noConflict();    
+    </script>
+    <%= javascript_include_tag 'prototype', 'facebox', 'application' %>
+    <script type="text/javascript">
+        jQuery(document).ready(function(jQuery) {
+            jQuery('a[rel*=facebox]').facebox();
+        });
+    </script>
+
+    <%= yield(:javascripts) %>
+	
+</body>
+
+<!-- Mirrored from osc4.template-help.com/wt_31365/index.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 19 Jan 2011 22:04:21 GMT -->
+</html>
+

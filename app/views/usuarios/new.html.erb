@@ -1,0 +1,19 @@
+
+<% content_for (:head) do%>
+	<%= stylesheet_link_tag "cadastrar"%>
+<%end%>	
+
+<div class="box bg">
+	<div class="titulo">Crie sua conta</div>
+	<% @usuario.password = @usuario.password_confirmation = nil %>
+	
+	
+	<div id="form_cadastro">
+		
+		<p style="margin-top:50px; margin-bottom:20px; text-align:center;"> Já possui uma conta? Entre <%= link_to "aqui",  login_path,  { :title => "Logue no sistema" } %></p>
+		
+		<%= render :partial => 'form_usuario' %>
+		
+	</div>
+
+</div>

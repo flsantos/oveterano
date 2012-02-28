@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/oveterano/svn/!svn/ver/25/app/views/ofertasearches
+END
+_paginate.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/1/app/views/ofertasearches/_paginate.html.erb
+END
+_search_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/oveterano/svn/!svn/ver/46/app/views/ofertasearches/_search_form.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/46/app/views/ofertasearches/new.html.erb
+END
+get_horario.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/oveterano/svn/!svn/ver/46/app/views/ofertasearches/get_horario.js.erb
+END
+search.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/46/app/views/ofertasearches/search.js.erb
+END
+_agenda.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/app/views/ofertasearches/_agenda.html.erb
+END
+_ofertas.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/46/app/views/ofertasearches/_ofertas.html.erb
+END
+_oferta_ajuda.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/23/app/views/ofertasearches/_oferta_ajuda.html.erb
+END
+show_ofertas.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/oveterano/svn/!svn/ver/1/app/views/ofertasearches/show_ofertas.html.erb
+END

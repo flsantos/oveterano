@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/oveterano/svn/!svn/ver/25/app/views/grades
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/oveterano/svn/!svn/ver/46/app/views/grades/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/oveterano/svn/!svn/ver/46/app/views/grades/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/46/app/views/grades/new.html.erb
+END
+geteventos.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/oveterano/svn/!svn/ver/19/app/views/grades/geteventos.js.erb
+END
+_agenda.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/oveterano/svn/!svn/ver/25/app/views/grades/_agenda.html.erb
+END

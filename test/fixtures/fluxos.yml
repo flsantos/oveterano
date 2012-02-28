@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  habilitacao_id: 1
+
+two:
+  habilitacao_id: 1

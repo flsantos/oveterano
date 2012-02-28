@@ -1,0 +1,9 @@
+<div id="notas" style="display:none;">
+	
+	<%= @result.split("<br/>")[1]%><br/>
+	<strong>Pontuação: <%= @result.split("<br/>")[0].split[0]%></strong><br/>
+	<%= image_tag("like.png")%> : <%=@votosLike%><br/>
+	<%= image_tag("dislike.png")%> : <%=@votosDislike%><br/>
+	<!--Total de votos: <%= @result.split("<br/>")[0].split[1]%><br/>-->				
+</div>
+<script>jQuery("#notas").fadeIn("slow");</script>

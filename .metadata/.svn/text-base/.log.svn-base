@@ -1,0 +1,486 @@
+!SESSION 2011-02-09 23:45:15.193 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -application com.aptana.ide.desktop.integration.Application -application com.aptana.ide.desktop.integration.Application
+Command-line arguments:  -os win32 -ws win32 -arch x86 -application com.aptana.ide.desktop.integration.Application -data C:\Users\fernando\rubymine_workspace\ofertaweb_unb -application com.aptana.ide.desktop.integration.Application
+
+!ENTRY org.eclipse.ui 4 4 2011-02-09 23:45:19.141
+!MESSAGE Unable to find view with id: com.aptana.ide.samples.SamplesView, when creating perspective com.aptana.ide.js.ui.WebPerspective
+
+!ENTRY org.eclipse.ui 4 4 2011-02-09 23:45:19.146
+!MESSAGE Unable to find view with id: com.aptana.ide.documentation.jquery.visualjquery, when creating perspective com.aptana.ide.js.ui.WebPerspective
+
+!ENTRY org.eclipse.ui 4 4 2011-02-09 23:45:19.149
+!MESSAGE Unable to find Action Set: com.aptana.ide.server.ui.launchActionSet
+
+!ENTRY org.eclipse.ui.workbench 2 0 2011-02-09 23:45:23.355
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-02-09 23:45:23.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-02-09 23:45:23.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-02-09 23:45:23.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@178a7d9),sourcePriority=16384)
+
+!ENTRY org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE A conflict occurred for CTRL+SHIFT+U:
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.upload,Upload...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.UploadHandler@151e135,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu,Show Occurrences in File Quick Menu,
+		Shows the Occurrences in File quick menu,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.testunit.rerunLastTest,Rerun Last Test,
+		Rerun the last executed test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-02-09 23:45:23.361
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-02-09 23:45:39.875
+!MESSAGE C:\Windows\sqlite3.exe (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.exe (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-02-09 23:45:39.878
+!MESSAGE C:\Windows\sqlite3.dll (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.dll (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2011-03-22 12:18:25.222 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -application com.aptana.ide.desktop.integration.Application
+Command-line arguments:  -os win32 -ws win32 -arch x86 -application com.aptana.ide.desktop.integration.Application
+
+!ENTRY org.eclipse.ui.workbench 2 0 2011-03-22 12:18:42.982
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:18:42.982
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:18:42.983
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:18:42.983
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1909385),sourcePriority=16384)
+
+!ENTRY org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE A conflict occurred for CTRL+SHIFT+U:
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.upload,Upload...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.UploadHandler@190690e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu,Show Occurrences in File Quick Menu,
+		Shows the Occurrences in File quick menu,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.testunit.rerunLastTest,Rerun Last Test,
+		Rerun the last executed test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:18:43.050
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-03-22 12:18:49.876
+!MESSAGE C:\Windows\sqlite3.exe (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.exe (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-03-22 12:18:49.912
+!MESSAGE C:\Windows\sqlite3.dll (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.dll (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2011-03-22 12:22:50.506 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Framework arguments:  -application com.aptana.ide.desktop.integration.Application -application com.aptana.ide.desktop.integration.Application
+Command-line arguments:  -os win32 -ws win32 -arch x86 -application com.aptana.ide.desktop.integration.Application -data C:\Users\fernando\rubymine_workspace\ofertaweb_unb -application com.aptana.ide.desktop.integration.Application
+
+!ENTRY org.eclipse.ui.workbench 2 0 2011-03-22 12:22:54.356
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:22:54.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:22:54.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-03-22 12:22:54.356
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@2c03ff),sourcePriority=16384)
+
+!ENTRY org.eclipse.jface 2 0 2011-03-22 12:22:54.384
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:22:54.384
+!MESSAGE A conflict occurred for CTRL+SHIFT+U:
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(com.aptana.ide.syncing.ui.commands.upload,Upload...,
+		,
+		Category(com.aptana.ide.syncing.ui.commands.category,File Transfer,File Transfer Commands,true),
+		com.aptana.ide.syncing.ui.handlers.UploadHandler@1415dbf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu,Show Occurrences in File Quick Menu,
+		Shows the Occurrences in File quick menu,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:22:54.384
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:22:54.384
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.rubypeople.rdt.testunit.rerunLastTest,Rerun Last Test,
+		Rerun the last executed test,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:22:54.384
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.edit.text.ruby.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2011-03-22 12:22:54.385
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.rubypeople.rdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-03-22 12:22:56.053
+!MESSAGE C:\Windows\sqlite3.exe (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.exe (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.aptana.radrails.sqlite3.win32 4 -1 2011-03-22 12:22:56.055
+!MESSAGE C:\Windows\sqlite3.dll (Acesso negado)
+!STACK 0
+java.io.FileNotFoundException: C:\Windows\sqlite3.dll (Acesso negado)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.copyFile(InstallSQLite3Job.java:31)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.installSqlite3(InstallSQLite3Job.java:63)
+	at com.aptana.radrails.sqlite3.win32.InstallSQLite3Job.earlyStartup(InstallSQLite3Job.java:83)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:87)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:66)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2192)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

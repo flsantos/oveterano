@@ -1,0 +1,56 @@
+<% content_for (:stylesheets) do%>
+	<%= stylesheet_link_tag "contato"%>
+<%end%>	
+
+<div class="box bg">
+
+	<div class="titulo">Contate-nos</div>
+
+    <div style="text-align:center">
+        <p>Dúvidas? Sugestões? Presentes? <br />Entre em contato:</p>
+    <br />
+      
+    <div id="form_contato">    
+		<% form_tag :controller => 'contato', :action => 'enviar_email_contato' do %>
+		
+
+
+				<ul><li>
+					<% if logged_in? %>
+					<%= link_to_function "Meu nome", "document.getElementById('nome').value = '"+current_usuario.nome+"'"%>
+					<% else %>
+					<%= label_tag :nome, 'Nome: ' %>
+					<% end %>
+					<%= text_field_tag :nome , nil, :value => " (opcional)", :onfocus => "if (this.value == ' (opcional)') {this.value='';}", :onblur => "if (this.value == '') { this.value = ' (opcional)'}"%>
+				</li></ul>
+			
+				<ul><li>
+					<% if logged_in? %>
+					<%= link_to_function "Meu email", "document.getElementById('email').value = '"+current_usuario.email+"'"%>
+					<% else %>
+					<%= label_tag :email, 'Email: ' %>
+					<% end %>
+					<%= text_field_tag :email , nil, :value => " (opcional)", :onfocus => "if (this.value == ' (opcional)') {this.value='';}", :onblur => "if (this.value == '') { this.value = ' (opcional)'}" %>
+				</li></ul>
+				
+				<ul><li>
+					
+					<%= text_area_tag :mensagem," Comente aqui...", :value => " Comente aqui...", :onfocus => "if (this.value == ' Comente aqui...') {this.value='';}", :onblur => "if (this.value == '') { this.value = ' Comente aqui...'}" %>
+				</li></ul>
+				
+				<div id="button_enviar" class="shadow_botao">
+					<%= image_submit_tag "botao_enviar2.png",:width => "77px", :height => "27px" %>
+				</div>
+		<% end %>
+	</div>
+        	
+        	
+        	
+        <div style="color:blue;">
+            <p>contato@oveterano.com</p>
+        </div>
+    </div>
+    <br /><br />
+
+</div>
+

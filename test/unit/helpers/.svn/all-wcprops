@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/oveterano/svn/!svn/ver/19/test/unit/helpers
+END
+fluxos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/1/test/unit/helpers/fluxos_helper_test.rb
+END
+grade_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/19/test/unit/helpers/grade_helper_test.rb
+END
+eventos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/19/test/unit/helpers/eventos_helper_test.rb
+END
+horarios_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/test/unit/helpers/horarios_helper_test.rb
+END
+habilitacoes_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/1/test/unit/helpers/habilitacoes_helper_test.rb
+END
+campi_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/1/test/unit/helpers/campi_helper_test.rb
+END
+reservas_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/test/unit/helpers/reservas_helper_test.rb
+END
+curriculos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/1/test/unit/helpers/curriculos_helper_test.rb
+END
+disciplinasearches_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/oveterano/svn/!svn/ver/1/test/unit/helpers/disciplinasearches_helper_test.rb
+END
+ofertasearches_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/oveterano/svn/!svn/ver/1/test/unit/helpers/ofertasearches_helper_test.rb
+END
+gradeshorarias_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/19/test/unit/helpers/gradeshorarias_helper_test.rb
+END
+professorsearches_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/oveterano/svn/!svn/ver/1/test/unit/helpers/professorsearches_helper_test.rb
+END
+evento_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/oveterano/svn/!svn/ver/19/test/unit/helpers/evento_helper_test.rb
+END
+disciplinas_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/oveterano/svn/!svn/ver/1/test/unit/helpers/disciplinas_helper_test.rb
+END
+assets_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/oveterano/svn/!svn/ver/44/test/unit/helpers/assets_helper_test.rb
+END
+ofertas_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/oveterano/svn/!svn/ver/1/test/unit/helpers/ofertas_helper_test.rb
+END
+departamentos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/oveterano/svn/!svn/ver/1/test/unit/helpers/departamentos_helper_test.rb
+END
+contato_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/oveterano/svn/!svn/ver/1/test/unit/helpers/contato_helper_test.rb
+END
+posts_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/1/test/unit/helpers/posts_helper_test.rb
+END
+professores_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/oveterano/svn/!svn/ver/1/test/unit/helpers/professores_helper_test.rb
+END
+inicio_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/1/test/unit/helpers/inicio_helper_test.rb
+END
+cursos_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/1/test/unit/helpers/cursos_helper_test.rb
+END

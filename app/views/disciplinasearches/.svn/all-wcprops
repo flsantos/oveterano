@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/23/app/views/disciplinasearches
+END
+index.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/views/disciplinasearches/index.js.rjs
+END
+_paginate.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/oveterano/svn/!svn/ver/1/app/views/disciplinasearches/_paginate.html.erb
+END
+_search_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/oveterano/svn/!svn/ver/46/app/views/disciplinasearches/_search_form.html.erb
+END
+auto_complete.js.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/1/app/views/disciplinasearches/auto_complete.js.erb
+END
+_disciplina_nao_encontrada.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/oveterano/svn/!svn/ver/1/app/views/disciplinasearches/_disciplina_nao_encontrada.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/views/disciplinasearches/new.html.erb
+END
+_anexo_ajuda.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/oveterano/svn/!svn/ver/46/app/views/disciplinasearches/_anexo_ajuda.html.erb
+END
+_show_disciplinas.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/oveterano/svn/!svn/ver/1/app/views/disciplinasearches/_show_disciplinas.html.erb
+END
+create.js.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/oveterano/svn/!svn/ver/46/app/views/disciplinasearches/create.js.rjs
+END
+_disciplina_ajuda.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/oveterano/svn/!svn/ver/23/app/views/disciplinasearches/_disciplina_ajuda.html.erb
+END

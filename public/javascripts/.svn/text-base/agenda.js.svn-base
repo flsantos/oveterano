@@ -1,0 +1,249 @@
+	/*
+	 * 
+	 * 
+	 * Alterações no arquivo jquery.weekcalendar.js:
+	 * Linha 1201:
+	 * 	Antes: var todayClass = 'ui-state-active wc-today';
+	 * 	Depois:var todayClass = '';
+	 */
+
+
+
+
+
+
+	function getHorariosLivres() {
+		var currentEvents = jQuery(".wc-cal-event");
+		var eventos = "";
+		if (typeof(currentEvents.data("calEvent")) == "undefined") {
+			alert("Não existem horários livres");
+		}
+		else {
+			currentEvents.each(function(index, element) {
+				var calEvent = jQuery(this).data("calEvent");
+				eventos = eventos + calEvent.start.getDay() + "-";
+				eventos = eventos + calEvent.start.getHours() + ":" + calEvent.start.getMinutes() + "-";
+				eventos = eventos + calEvent.end.getHours() + ":" + calEvent.end.getMinutes() + "-";
+			});
+
+			alert(eventos);
+			return eventos;
+		}
+	}
+
+	jQuery(document).ready(function(){
+
+		//Esse comando faz com que ao clicar em algum link, execute o código recebido caso
+		//seja javascript (Ajax)
+		jQuery(".ajax a").click(function() {
+			jQuery.get(this.href, null, null, "script");
+			return false;
+		});
+
+	    var jQuerycalendar = jQuery('#calendar');
+		var id = 10;
+
+
+
+		jQuerycalendar.weekCalendar({
+			
+      timeslotsPerHour : 2,
+      dateFormat: '',
+      use24Hour: true,
+      allowCalEventOverlap : true,
+      overlapEventsSeparate: true,
+      firstDayOfWeek : 1,
+	  title :"Selecione o seu horário livre",
+      businessHours :{start: 6, end: 24, limitDisplay: true },
+      daysToShow : 6,
+	  useShortDayNames: false,
+      timeSeparator: '-',
+	  newEventText: 'Novo horário livre',
+	  buttons: false,
+	  longDays: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+	  textSize: 10,
+      height : function(jQuerycalendar) {
+         return jQuery(window).height() - jQuery("h1").outerHeight() - 1;
+      },
+      draggable : function(calEvent, jQueryevent) {
+         return calEvent.readOnly != true;
+      },
+      resizable : function(calEvent, jQueryevent) {
+         return calEvent.readOnly != true;
+      },
+      eventNew : function(calEvent, jQueryevent) {
+		 var jQuerydialogContent = jQuery("#event_edit_container");
+         var startField = jQuerydialogContent.find("select[name='start']").val(calEvent.start);
+         var endField = jQuerydialogContent.find("select[name='end']").val(calEvent.end);
+
+
+         jQuerydialogContent.dialog({
+            modal: true,
+            title: "Confirmar horário livre",
+            close: function() {
+               jQuerydialogContent.dialog("destroy");
+               jQuerydialogContent.hide();
+               jQuery('#calendar').weekCalendar("removeUnsavedEvents");
+            },
+            buttons: {
+               Confirmar : function() {
+                  calEvent.id = id;
+                  id++;
+                  calEvent.start = new Date(startField.val());
+                  calEvent.end = new Date(endField.val());
+                  calEvent.title = "Horário Livre"
+
+                  jQuerycalendar.weekCalendar("removeUnsavedEvents");
+                  jQuerycalendar.weekCalendar("updateEvent", calEvent);
+                  jQuerydialogContent.dialog("close");
+				  
+               },
+               Cancelar : function() {
+                  jQuerydialogContent.dialog("close");
+               }
+            }
+         }).show();
+
+         setupStartAndEndTimeFields(startField, endField, calEvent, jQuerycalendar.weekCalendar("getTimeslotTimes", calEvent.start));
+
+      },
+      eventDrop : function(calEvent, jQueryevent) {
+
+      },
+      eventResize : function(calEvent, jQueryevent) {
+      },
+      eventClick : function(calEvent, jQueryevent) {
+
+         if (calEvent.readOnly) {
+            return;
+         }
+
+         var jQuerydialogContent = jQuery("#event_edit_container");
+         var startField = jQuerydialogContent.find("select[name='start']").val(calEvent.start);
+         var endField = jQuerydialogContent.find("select[name='end']").val(calEvent.end);
+
+         jQuerydialogContent.dialog({
+            modal: true,
+            title: "Alterar " + calEvent.title,
+            close: function() {
+               jQuerydialogContent.dialog("destroy");
+               jQuerydialogContent.hide();
+               jQuery('#calendar').weekCalendar("removeUnsavedEvents");
+            },
+            buttons: {
+               Confirmar : function() {
+
+                  calEvent.start = new Date(startField.val());
+                  calEvent.end = new Date(endField.val());
+
+                  jQuerycalendar.weekCalendar("updateEvent", calEvent);
+                  jQuerydialogContent.dialog("close");
+               },
+               "Deletar" : function() {
+                  jQuerycalendar.weekCalendar("removeEvent", calEvent.id);
+                  jQuerydialogContent.dialog("close");
+               },
+               Cancelar : function() {
+                  jQuerydialogContent.dialog("close");
+               }
+            }
+         }).show();
+
+         var startField = jQuerydialogContent.find("select[name='start']").val(calEvent.start);
+         var endField = jQuerydialogContent.find("select[name='end']").val(calEvent.end);
+         setupStartAndEndTimeFields(startField, endField, calEvent, jQuerycalendar.weekCalendar("getTimeslotTimes", calEvent.start));
+         jQuery(window).resize().resize(); //fixes a bug in modal overlay size ??
+
+      },
+      eventMouseover : function(calEvent, jQueryevent) {
+      },
+      eventMouseout : function(calEvent, jQueryevent) {
+      },
+      noEvents : function() {
+
+      },
+      data : function(start, end, callback) {
+       //callback(getEventData());
+     }
+	
+   });
+
+   function getEventData() {
+      var year = new Date().getFullYear();
+      var month = new Date().getMonth();
+      var day = new Date().getDate();
+	  
+
+      return {
+         events:[
+		   {"id":1, "start": new Date(year, month, day, 12), "end": new Date(year, month, day, 13, 35),"title":"Lunch with Mike"},
+		   {"id":2, "start": Date.parse("2011-06-01 13:00:00"), "end": Date.parse("2011-06-01 14:00:00"), "title":"Cabelereiro"},
+		   {"id":3, "start": new Date(year, month, day-1, 12), "end": new Date(year, month, day-1, 13, 35),"title":"Barco"}
+		]
+
+      };
+   }
+
+
+   /*
+    * Sets up the start and end time fields in the calendar event
+    * form for editing based on the calendar event being edited
+    */
+   function setupStartAndEndTimeFields(jQuerystartTimeField, jQueryendTimeField, calEvent, timeslotTimes) {
+
+      jQuerystartTimeField.empty();
+      jQueryendTimeField.empty();
+
+      for (var i = 0; i < timeslotTimes.length; i++) {
+         var startTime = timeslotTimes[i].start;
+         var endTime = timeslotTimes[i].end;
+         var startSelected = "";
+         if (startTime.getTime() === calEvent.start.getTime()) {
+            startSelected = "selected=\"selected\"";
+         }
+         var endSelected = "";
+         if (endTime.getTime() === calEvent.end.getTime()) {
+            endSelected = "selected=\"selected\"";
+         }
+         jQuerystartTimeField.append("<option value=\"" + startTime + "\" " + startSelected + ">" + timeslotTimes[i].startFormatted + "</option>");
+         jQueryendTimeField.append("<option value=\"" + endTime + "\" " + endSelected + ">" + timeslotTimes[i].endFormatted + "</option>");
+
+         jQuerytimestampsOfOptions.start[timeslotTimes[i].startFormatted] = startTime.getTime();
+         jQuerytimestampsOfOptions.end[timeslotTimes[i].endFormatted] = endTime.getTime();
+
+      }
+      jQueryendTimeOptions = jQueryendTimeField.find("option");
+      jQuerystartTimeField.trigger("change");
+   }
+
+   var jQueryendTimeField = jQuery("select[name='end']");
+   var jQueryendTimeOptions = jQueryendTimeField.find("option");
+   var jQuerytimestampsOfOptions = {start:[],end:[]};
+
+   //reduces the end time options to be only after the start time options.
+   jQuery("select[name='start']").change(function() {
+      var startTime = jQuerytimestampsOfOptions.start[jQuery(this).find(":selected").text()];
+      var currentEndTime = jQueryendTimeField.find("option:selected").val();
+      jQueryendTimeField.html(
+            jQueryendTimeOptions.filter(function() {
+               return startTime < jQuerytimestampsOfOptions.end[jQuery(this).text()];
+            })
+            );
+
+      var endTimeSelected = false;
+      jQueryendTimeField.find("option").each(function() {
+         if (jQuery(this).val() === currentEndTime) {
+            jQuery(this).attr("selected", "selected");
+            endTimeSelected = true;
+            return false;
+         }
+      });
+
+      if (!endTimeSelected) {
+         //automatically select an end date 2 slots away.
+         jQueryendTimeField.find("option:eq(1)").attr("selected", "selected");
+      }
+
+   });
+
+   });

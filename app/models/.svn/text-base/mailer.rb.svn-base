@@ -1,0 +1,43 @@
+class Mailer < ActionMailer::Base
+	
+	def envia_email_contato(nome, email, mensagem)
+		#recipients "contato@oveterano.com"
+    recipients "fernandoleandro1991@gmail.com"
+		from email
+    sent_on Time.now
+		subject "Contato - OVeterano.com [#{nome}]"
+		body mensagem
+  end
+
+  def envia_email_confirmacao(usuario)
+    @usuario = usuario
+    @url = "http://localhost:3000/usuarios/activate/#{usuario.activation_code}"
+    recipients usuario.email
+    #from "no-reply@oveterano.com"
+    from "oveterano.dev@gmail.com"
+    sent_on Time.now
+    subject "Bem Vindo ao OVeterano.com"
+  end
+  
+  def envia_email_conta_ativada(usuario)
+    @usuario = usuario
+    @url = "http://localhost/"
+    recipients usuario.email
+    #from "no-reply@oveterano.com"
+    from "oveterano.dev@gmail.com"
+    sent_on Time.now
+    subject 'Sua conta foi ativada com sucesso!'
+  end
+  
+  def envia_email_recuperacao(usuario)
+    @usuario = usuario
+    @url = "http://localhost:3000/reset/#{usuario.reset_code}"
+    recipients usuario.email
+    #from "no-reply@oveterano.com"
+    from "oveterano.dev@gmail.com"
+    sent_on Time.now
+    subject "Recuperação de senha - OVeterano.com"
+  end
+  
+	
+end

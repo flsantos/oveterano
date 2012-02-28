@@ -1,0 +1,109 @@
+    <% div_for disciplina do %>
+
+            <div id="disc" >
+
+				<div class="font2">
+                <span id="exibir_ocultar_<%=h disciplina.id %>" class="mouseover_negrito" style="cursor:pointer;">
+                      <div id="codDep"><%=h disciplina.codigo %> - <%=h Departamento.find(disciplina.departamento_id).sigla %></div>
+			          <div id="nome"><%=h disciplina.nome %></div>
+                </span>
+				</div>
+
+                <div id="conteudo">
+                    <div id="nota" style="float:right">
+                      <div id="avaliacao_disciplina" class="fundo1" title ="Nota da disciplina">
+                      	<div style="margin-top:5px;">
+                       		Avaliação<br/><span style="font-size:20px; vertical-align:middle;"><%= getNota(disciplina.id) %></span>
+						</div>
+                      </div>
+                    </div>
+
+                <p>Departamento: <%=h Departamento.find(disciplina.departamento_id).nome %></p>
+
+
+                <div class="ultimo_comentario">
+                    <% if Post.find_all_by_alias_and_alias_id(1, disciplina.id).last %>
+                              <p>
+                                  <span style="font-weight:bold;">Último comentário:</span>
+						  			<% 
+										texto = ""
+										msg = Post.find_all_by_alias_and_alias_id(1, disciplina.id).last.mensagem
+										if !msg.include? " "
+											texto = ""
+											msg.split(/(.{70})/).each do |slice|
+												texto << slice
+												texto << "\n"
+											end
+										else
+											texto = msg
+										end
+									%>
+                                  <%= texto %>
+                              </p>
+                    <% else  %>
+                              <p>
+                                  Essa disciplina ainda não possui nenhum comentário.
+                                  <br/>
+                                  Deixe sua opinião
+                                      <% link_to :controller => "disciplinas", :action => "show" , :id => disciplina do %>
+                                          <span style="color:#F1B80A; font-size:12px; font-weight:bold;">aqui</span>
+                                      <% end %>
+                              </p>
+                    <% end %>
+                </div>
+
+                <div style="float:right;">
+                    <div id="comentarios_out" style="height:45px; width:121px;">
+                          <% link_to :controller => "disciplinas", :action => "show", :id => disciplina do %>
+                              <div id="link_comentarios" class="fundo1" title="Visualizar disciplina"> <div style="height:7px;"></div>Comentários</div>
+                          <% end %> 	
+                    </div>
+                </div>
+
+
+                </div>
+
+            </div>
+
+        <style type="text/css">
+            #conteudo {display:none;}
+        </style>
+
+        <script type="text/javascript">
+            /*Código javascript para adicionar a funcionalidade de clicar na disciplina e aparecer a div em baixo*/
+
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                jQuery("#disciplina_<%= disciplina.id %> #conteudo").css("padding-bottom", "0px");
+            }
+
+
+            var tam = jQuery("#disciplina_<%= disciplina.id %> #conteudo").height() + 30; /*Não sei pq, mas o height não pega a altura certa, por isso coloquei mais 30*/
+            tam = tam + "px";
+
+
+                jQuery("span#exibir_ocultar_<%= disciplina.id %>").toggle(
+                    function() {
+						if (get_open_disc() != "") {
+							if (jQuery("#"+get_open_disc()).css('display') == 'block') {
+								if (get_open_disc() != <%= disciplina.id%>) {
+							        jQuery("#"+get_open_disc()+" #conteudo").fadeOut(1);
+									jQuery("#"+get_open_disc()).css("padding-bottom", "0px");/*Empurra as outras divs para cima*/
+			                        jQuery("#"+get_open_disc()+" #disc").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+								}
+						    }
+						}
+                        jQuery("#disciplina_<%= disciplina.id %> #conteudo").fadeIn("fast"); /*Exibe a div*/
+                        jQuery("#disciplina_<%= disciplina.id %>").css("padding-bottom", tam ); /*Empurra as outras divs para baixo*/
+                        jQuery("#disciplina_<%= disciplina.id %> #disc").css("border-bottom", "0px"); /*Tira a bordinha de baixo*/
+						set_open_disc("disciplina_<%= disciplina.id %>");
+                    },
+                    function() {
+                         jQuery("#disciplina_<%= disciplina.id %> #conteudo").fadeOut("fast", function() {
+                             jQuery("#disciplina_<%= disciplina.id %>").css("padding-bottom", "0px");/*Empurra as outras divs para cima*/
+                             jQuery("#disciplina_<%= disciplina.id %> #disc").css("border-bottom", "1px solid #E1E1E1");/*Coloca a bordinha de baixo*/
+                         });
+                });
+        </script>
+
+
+    <% end %>

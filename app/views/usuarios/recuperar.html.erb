@@ -1,0 +1,21 @@
+<% content_for (:stylesheets) do %>
+	<%= stylesheet_link_tag "cadastrar" %>
+<% end%>
+
+<div class="box bg">
+	
+	<div id="forgot_password">
+		<% form_for :usuario do |f| -%>
+			
+            <div id="label">Informe o seu email para recuperar a sua senha:</div>
+			<br/>
+            <%= f.label :email, 'Email:' %>
+            <%= f.text_field :email %>
+   
+            <div id="submit"> <%= image_submit_tag 'botao_enviar2.png' %> </div>
+			
+		<% end -%>
+	</div>
+		
+</div>
+

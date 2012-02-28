@@ -1,0 +1,45 @@
+Tutorial para configurar o webbynode
+
+o rubygems precisa ser na versao 1.3.7
+    gem update --system 1.3.7
+
+lista das gems a serem instaladas
+	gems_used.jpg
+
+
+
+
+dependencias
+
+restful_authentication
+rdoc
+will_paginate
+nokogiri
+mysql
+rails 2.3.5
+
+
+instalar o phpmyadmin:
+Install phpmyadmin
+
+phpmyadmin is great for checking the linuxmce database tables, also good for mythtv tables
+
+sudo apt-get install phpmyadmin -y
+echo create a symlink in /var/www/ to point to /usr/share/phpmyadmin/
+cd /var/www/
+sudo ln -s /usr/share/phpmyadmin/ phpmyadmin
+
+open a browser and go to http://localhost/phpmyadmin
+if logon with mythtv login locate the DBPassword password from > nano /etc/mythtv/mysql.txt
+to locate the password for the pluto database > nano /etc/pluto.conf (this is usually blank you may wish to create a password and modify the conf file to make secure)
+
+
+instalar o imagemagick:
+    apt-get install imagemagick
+
+para mudar a Timezone
+    dpkg-reconfigure tzdata
+
+    
+
+Lembrar de mudar as senhas no banco

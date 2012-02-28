@@ -1,0 +1,23 @@
+<p>
+  <b>Codigo:</b>
+  <%=h @professorsearch.codigo %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%=h @professorsearch.nome %>
+</p>
+
+<p>
+  <b>Disciplina:</b>
+  <%=h @professorsearch.disciplina %>
+</p>
+
+<p>
+  <b>Departamento:</b>
+  <%=h @professorsearch.departamento %>
+</p>
+
+
+<%= link_to 'Edit', edit_professorsearch_path(@professorsearch) %> |
+<%= link_to 'Back', professorsearches_path %>

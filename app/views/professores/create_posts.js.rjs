@@ -1,0 +1,5 @@
+page.insert_html :top, :posts, :partial => @post
+page[@post].visual_effect :highlight, :delay => 0.1, :startcolor => "#FEC849"
+page[:mensagem].value = ''
+page[:mensagem].focus
+page.replace_html 'sem_comentario', ''

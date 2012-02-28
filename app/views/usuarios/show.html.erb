@@ -1,0 +1,29 @@
+<div class="box bg">
+	
+	
+	<div style="margin:auto; text-align:center;">
+		
+		<div style="margin-top: 40px; margin-bottom:40px;">
+			<div>
+			<%= image_tag @usuario.avatar.url(:medium) %>
+			</div>
+			<br />
+				<ul><li>
+					<strong>Nome:</strong> <%=h @usuario.nome %>
+				</li></ul>
+			
+				<ul><li>
+					<strong>Email:</strong> <%=h @usuario.email %>
+				</li></ul>
+				
+				<ul><li>
+					<strong>Curso:</strong> <%= Curso.find( @usuario.curso_id ).nome if @usuario.curso_id%>
+				</li></ul>
+				
+				<ul><li>
+					<strong>Semestre:</strong> <%=h @usuario.semestre if @usuario.semestre%>
+				</li></ul>
+		</div>
+	</div>		
+</div>
+

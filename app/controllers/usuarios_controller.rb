@@ -1,0 +1,209 @@
+class UsuariosController < ApplicationController
+
+  # render new.rhtml
+  def new
+    verifica_login
+    @usuario = Usuario.new
+  end
+ 
+  def create
+    logout_keeping_session!
+    @usuario = Usuario.new(params[:usuario])
+    
+      if Usuario.find_by_email(params[:usuario][:email]) != nil
+        if Usuario.find_by_email(params[:usuario][:email]).activation_code != nil
+          Mailer.deliver_envia_email_confirmacao(Usuario.find_by_email(params[:usuario][:email]))
+          flash[:notice] = "Em instantes você recebera um novo email com um link de ativação."
+          redirect_to signup_path
+        else
+          flash[:error] = "Email já cadastrado"
+          redirect_to signup_path
+        end
+      else
+        if (!params[:confirmacao] || params[:usuario][:nome] == '' || params[:usuario][:email] == '' || params[:usuario][:password] == '' ||  params[:usuario][:password_confirmation] == '')
+            flash[:error]  = "Por favor, preencha os campos corretamente"
+            redirect_to signup_path
+        else
+            if (params[:usuario][:password].size < 6)
+                flash[:error]  = "A senha deve possuir ao menos 6 dígitos"
+                redirect_to signup_path
+            else
+                if (params[:usuario][:password] != params[:usuario][:password_confirmation])
+                    flash[:error]  = "Senhas inconsistentes"
+                    redirect_to edit_usuario_path(current_usuario.id)
+                else
+                    if !validate_anexo(params) 
+                      redirect_to signup_path
+                    else
+                      begin
+                          success = @usuario && @usuario.save
+                          if success && @usuario.errors.empty?
+                            
+                            # Protects against session fixation attacks, causes request forgery
+                            # protection if visitor resubmits an earlier form using back
+                            # button. Uncomment if you understand the tradeoffs.
+                            # reset session
+                            
+                      
+                            Mailer.deliver_envia_email_confirmacao(@usuario)
+                            
+                            #self.current_usuario = @usuario # !! now logged in
+                            redirect_back_or_default('/')
+                            flash[:notice] = "Obrigado por se registrar. Em instantes você recebera um email com um link de ativação."
+                          else
+                            flash[:error]  = "Não foi possível criar sua conta. Por favor tente novamente ou entre em contato em contato@oveterano.com"
+                            redirect_to signup_path
+                          end
+                      rescue Exception => e
+                          @usuario.delete
+                          flash[:error]  = "Não foi possível criar sua conta. Por favor tente novamente ou entre em contato em contato@oveterano.com"
+                          redirect_to signup_path
+                      end  
+                  end
+               end
+           end
+        end
+     end
+  end
+  
+
+  def edit
+    @usuario = Usuario.find(current_usuario.id)
+  end
+  
+  def update
+    @usuario = Usuario.find(current_usuario.id)
+    
+    if (params[:usuario][:nome] == '' || params[:usuario][:email] == '')
+        flash[:error]  = "Por favor, preencha os campos corretamente"
+        redirect_to edit_usuario_path(current_usuario.id)
+    else
+        if (params[:usuario][:password].size < 6 && params[:usuario][:password].size != 0)
+            flash[:error]  = "A senha deve possuir ao menos 6 dígitos"
+            redirect_to edit_usuario_path(current_usuario.id)
+        else
+            if (params[:usuario][:password] != params[:usuario][:password_confirmation])
+                flash[:error]  = "Senhas inconsistentes"
+                redirect_to edit_usuario_path(current_usuario.id)
+            else
+                if !validate_anexo(params)
+                  redirect_to edit_usuario_path(current_usuario.id)
+                else
+      
+                    respond_to do |format|
+                        if @usuario.update_attributes(params[:usuario])
+                          flash[:notice] = 'Usuário atualizado com sucesso.'
+                          format.html { redirect_to :action => "edit" }
+                          format.xml  { head :ok }
+                        else
+                          format.html { render :action => "edit" }
+                          format.xml  { render :xml => @usuario.errors, :status => :unprocessable_entity }
+                        end
+                     end
+                 end
+             end
+         end
+     end
+  end
+  
+  
+  def show
+    redirect_to :controller => "inicio" unless logged_in?
+    @usuario = Usuario.find(params[:id])
+  end
+  
+  def activate
+
+    logout_keeping_session!
+    usuario = Usuario.find_by_activation_code(params[:id]) unless params[:id].blank?
+  
+    case
+    when (!params[:id].blank?) && usuario && !usuario.active?
+      usuario.activate!
+    Mailer.deliver_envia_email_conta_ativada(usuario)
+      flash[:notice] = "Conta ativada. Você já pode fazer o login"
+      redirect_to '/'
+    when params[:id].blank?
+      flash[:error] = "A chave de ativação está incorreta. Siga o link enviado no seu email."
+      redirect_back_or_default('/')
+    else 
+      flash[:error]  = "Não conseguimos encontrar o código de ativação informado. Confirme o link no seu email ou tente fazer o login, talvez sua conta já esteja ativada."
+      redirect_back_or_default('/')
+    end
+  end
+  
+  
+  def recuperar
+    verifica_login
+    if request.post?
+      usuario = Usuario.find_by_email(params[:usuario][:email])
+      if usuario
+        usuario.create_reset_code
+        
+        Mailer.deliver_envia_email_recuperacao(usuario)
+        
+        flash[:notice] = "Código de recuperação enviado para #{usuario.email}"
+      else
+        flash[:notice] = "#{params[:usuario][:email]} não cadastrado no sistema"
+      end
+      redirect_back_or_default('/')
+    end
+  end
+  
+  def reset
+    verifica_login
+    @usuario = Usuario.find_by_reset_code(params[:reset_code]) unless params[:reset_code].nil?
+    if request.post?
+      if @usuario.update_attributes(:password => params[:usuario][:password], :password_confirmation => params[:usuario][:password_confirmation])
+        self.current_usuario = @usuario
+        @usuario.delete_reset_code
+        flash[:notice] = "Senha atualizada para #{@usuario.email}"
+        redirect_back_or_default('/')
+      else
+        render :action => :reset
+      end
+    end
+  end
+  
+  
+
+ helper_method :getSemestres
+  def getSemestres
+      ano = Time.now.year
+      
+      semestres = []
+      15.times do |x|
+          semestres << "1/#{ano - x}"
+          semestres << "2/#{ano - x}"
+      end
+      
+      return semestres
+  end
+  
+  
+
+  
+  helper_method :validate_anexo
+  def validate_anexo ( params )
+    if params[:usuario][:avatar] != nil
+        user = Usuario.new
+        user.avatar = params[:usuario][:avatar]
+        if user.avatar_file_size > 3145728
+          flash[:error] = "Imagem muito grande (Max: 3MB)"
+          return false
+        end
+        if user.avatar_content_type != 'image/gif' && user.avatar_content_type != 'image/jpeg' && user.avatar_content_type != 'image/png'
+          flash[:error] = "Formato de imagem incorreto (Formatos aceitos: gif, jpeg e png)"
+          return false
+        end
+    end
+    return true
+  end
+  
+  
+  def verifica_login
+    redirect_to :controller => "inicio" if logged_in?
+  end
+  
+  
+end

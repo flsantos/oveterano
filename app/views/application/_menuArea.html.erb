@@ -1,0 +1,20 @@
+<div id="menu_area">
+<ul class="font2">
+	<li class="first"><% link_to "/" do %> <strong> <div id="bg_inicio_icon"> início</div></strong> <% end%></li>
+	<li><% link_to :controller => "ofertasearches", :action => "new" do%> <strong><div id="bg_agenda_icon"> ofertas </div> </strong> <% end %></li>
+	<li><% link_to :controller => "professorsearches", :action => "new" do%> <strong><div id="bg_professor_icon"> professores</div></strong> <% end %></li>
+	<li><% link_to :controller => "disciplinasearches", :action => "new" do%> <strong><div id="bg_disciplina_icon"> disciplinas </div></strong> <% end %></li>
+	<li><% link_to :controller => "anexo", :action => "index" do%> <strong><div id="bg_anexo_icon"> documentos </div></strong> <% end %></li>
+	<li class="last"><% link_to :controller => "contato", :action => "index" do%><strong><div id="bg_email_icon"> contato </div></strong><% end %></li>
+</ul>
+<div class="clear"></div>
+</div>
+
+<% content_for :javascripts do %>
+    <script type="text/javascript">
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            jQuery(".nav a strong").css("height", "auto");
+            jQuery("#menu_area").css("margin-right", "0px");
+        }
+    </script>
+<% end %>

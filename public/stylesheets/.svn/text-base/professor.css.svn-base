@@ -1,0 +1,383 @@
+
+*{
+	margin:2; /*Defina a separacao das colunas aqui*/
+	padding:0;
+}
+
+
+.linha{
+    padding:0;
+    clear:both;
+}
+
+.coluna{    
+    height:25px;
+    border: 1px solid #000000;
+    width:120;      
+    float:left;
+}
+
+.box_1 {
+	text-align:left;
+}
+
+.tabela {
+	text-align:center;
+
+}
+
+#paginate {
+	
+}
+
+
+.posts{
+
+}
+
+#posts {
+	margin-bottom:50px;
+	margin:auto;
+	width:600px;
+}
+
+.post {
+	background-color: #FFFFFF;
+	color: #000000;
+	border: solid 1px #AAA;
+	width:580px;
+    margin: auto;
+	margin-bottom:5px;
+    padding: 5px 20px 5px 20px;  
+	text-align:left;
+	min-height:120px;
+	float:left;
+	
+}
+
+.post span {
+	font-size:11px;
+	text-align:right;
+}
+
+.new_post {
+	margin-top:25px;
+}
+
+#likedislike {
+	text-align:center;
+}
+
+#SearchProfFormOut {
+	width:600px;
+	/*background-color:#E5E5E5;*/
+	margin-top:50px;
+	margin-left:12%;
+	height:70px;
+	padding-top:20px;
+	/*-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;*/
+}
+
+#SearchProfForm {
+	
+	border: 1px solid #999999;
+	width: 463px; /*400 + 48 da imagem do botao de lupa + 15 pra empurrar o textfield pra direita*/
+	height:43px;
+	margin-left:15%;
+	margin-bottom:50px;
+	background-color:#FFF;
+
+    /*-moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;*/
+	
+}
+
+#professorsearch_nome {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	width: 400px;
+	height: 43px;
+    line-height:43px;
+	border:none;
+    background:#FFF;
+    margin-left:15px; /*ta empurrando pra direita aqui*/
+}
+
+#professorsearch_nome:focus {
+	outline:none;
+}
+
+#SearchProfForm:hover {
+	border-color: #FFB224;
+	border-width: 1px;
+}
+
+#SearchProfForm:focus {
+	border-color: #FFB224;
+	border-width: 1px;
+}
+
+#professores {
+	text-align:center;
+    margin-top:30px;
+	margin-bottom:10px;
+}
+
+#prof{
+	width:400px;
+	height:30px;
+    margin :auto;
+    margin-bottom:10px;
+	border-bottom:1px solid #E1E1E1;
+	font-size:12px;
+    text-align:left;
+}
+
+.mouseover_negrito:hover {
+	color:black;
+	font-weight:bold;
+}
+
+
+#paginate {
+    margin : auto;
+	margin-bottom:20px;
+    margin-top:10px;
+    width:400px;
+    text-align:center;
+}
+
+
+#titulo_professor {
+	margin-top:20px;
+	font-weight:bold;
+	margin-bottom:30px;
+}
+
+#faca_login {
+	margin-top:30px;
+	margin-bottom:20px;
+	text-align:center;
+	font-weight:bold;
+}
+#faca_login a {
+	color:#F1B80A;
+}
+
+#conteudo {
+border:1px solid #E1E1E1;
+padding:5px;
+padding-bottom:45px;
+margin-top:10px;
+width:500px;
+min-height:80px;
+}
+
+
+.ultimo_comentario {
+    width:350px;
+    font-style:italic;
+    margin-top:10px;
+}
+
+
+#show_professores {
+    min-height:10px;
+    margin-top:40px;
+}
+
+div#botao_buscar {
+    text-align:center;
+    font-family:Tahoma,Helvetica,sans-serif;
+    font-size:22px;
+    font-weight:bold;
+}
+
+#titulo_professor a {
+	text-decoration:none;
+}
+
+#avaliacao_professor {
+    /*background-image: url('../images/sprite-style.png');
+    background-position: left -0px;
+	background-repeat: no-repeat;*/
+    width:66px; 
+	height:56px; 
+	text-align:center; 
+	font-weight:bolder; 
+	font-size:12px; 
+	font-family:'Tahoma,Helvetica,sans-serif'; 
+	padding-top:4px; 
+	color:white;
+}
+
+#comentarios_out a {
+	text-decoration:none;
+	vertical-align:middle;
+}
+
+
+#link_comentarios {
+	font-family:'Tahoma,Helvetica,sans-serif'; 
+	text-align:center;
+	color:white;
+	font-weight:bold; 
+	font-size:15px;
+	margin-bottom:10px;
+	
+   /* background-image: url('../images/sprite-style.png');
+    background-position: left -60px;
+	background-color: #FFFFFF;
+	background-repeat:no-repeat;*/
+	height:36px; 
+	width:121px;
+}
+#link_comentarios:hover {
+background: #febf01; /* Old browsers */
+background: -moz-linear-gradient(top, #febf01 0%, #febf01 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#febf01), color-stop(100%,#febf01)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #febf01 0%,#febf01 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #febf01 0%,#febf01 100%); /* Opera11.10+ */
+background: -ms-linear-gradient(top, #febf01 0%,#febf01 100%); /* IE10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf01', endColorstr='#febf01',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, #febf01 0%,#febf01 100%); /* W3C */
+}
+
+
+#comentario {
+	float:left;
+	width:580px;
+}
+#avatar_nome {
+	width: 120px;
+	float:left;
+	text-align:center;
+}
+#autor_comentario a {
+	color:#333;
+	font-weight:bolder;
+	font-size:12px;
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+}
+.fundo_post2 a {color:white;}
+.fundo_post1 a {color:black;}
+
+#avatar_imagem {
+	width:90px;
+	height:90px;
+	margin:auto;
+}
+#avatar_imagem a{
+	text-decoration:none;
+}
+#msg {
+	width:450px;
+	float:left;
+}
+#msg_footer {
+	width:580px;
+	float:left;
+}
+#msg_footer a {
+	color:#F1B80A;
+	font-weight:bolder;
+}
+#votos {
+	margin-top:20px;
+}
+
+
+/*
+ * ****************CSS Referente a parte do like e dislike ****************
+ * */
+#like {
+	
+	/*background-image: url(../images/like.png);
+	background-repeat: no-repeat;*/
+	background-color:#DADADA;
+	width:75px;
+	border: 1px solid #ccc;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+}
+#dislike {
+	
+	/*background-image: url(../images/dislike.png);*/
+	width:25px;
+	border: 1px solid #ccc;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C */
+}
+#likeanddislike {
+	height:25px;
+	width:104px;
+	margin:auto;
+}
+
+.likes {
+	height:25px;
+	
+	float:left;
+}
+#likeanddislike a {
+	text-decoration:none;
+	height:10px;
+	font-size:13px;
+	font-weight:bold;
+	vertical-align:middle;
+}
+#likeanddislike span {
+	text-decoration:none;
+	height:10px;
+	vertical-align:middle;
+}
+
+
+#like:hover {
+	box-shadow: 0px 0px 2px #234;
+   -webkit-box-shadow: 0px 0px 2px #234;
+   -moz-box-shadow: 0px 0px 2px #234;
+}
+#dislike:hover {
+	box-shadow: 0px 0px 2px #234;
+   -webkit-box-shadow: 0px 0px 2px #234;
+   -moz-box-shadow: 0px 0px 2px #234;
+}
+#nota_avaliacao {
+	width: 200px;
+	margin:auto;
+	
+}

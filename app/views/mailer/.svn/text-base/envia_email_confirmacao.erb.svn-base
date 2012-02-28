@@ -1,0 +1,15 @@
+Olá <%=h @usuario.nome %>,
+
+Seja bem vindo ao OVeterano.com
+Para ativar sua conta visite o seguinte endereço:
+<%=h @url %>
+
+
+Caso você não tenha se cadastrado nesse site, por favor desconsidere esta mensagem.
+
+
+Atenciosamente,
+
+Equipe OVeterano.com
+------------------------------------
+http://www.oveterano.com

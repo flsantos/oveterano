@@ -1,0 +1,20 @@
+<div class="font2">
+<% if logged_in? -%>
+  <div id="usuario-bar-greeting">Olá <%= link_to current_usuario.nome, usuario_path(current_usuario.id), :title => "Editar informações" %> </div>
+  <div><%= image_tag current_usuario.avatar.url(:mini) %><br/></div>
+  <div id="usuario-bar-action">
+  	<%= link_to "Editar perfil", edit_usuario_path(current_usuario.id), :title => "Editar informações" %> - 
+  	<%= link_to "Sair", logout_path, { :title => "Deslogar" }    %>
+  </div>
+<% else -%>
+  <div id="usuario-bar-greeting"><!--%= link_to_login_with_IP 'Você não está logado', :title = "Login", :style = 'border: none;' --></div> Você não está logado
+    <div id="usuario-bar-action" >
+	  <%= link_to "Entrar",  login_path,  { :title => "Logue no sistema" } %>
+     <!--<a rel="facebox" href="#login_info" title="Logue no sistema">Entrar</a>-->
+          /
+      <%= link_to "Cadastrar", signup_path, { :title => "Crie sua conta" } %>
+  </div>
+
+							   
+<% end -%>
+</div>

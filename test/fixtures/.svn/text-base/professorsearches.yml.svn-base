@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  codigo: 1
+  nome: MyString
+  disciplina: MyString
+  departamento: MyString
+
+two:
+  codigo: 1
+  nome: MyString
+  disciplina: MyString
+  departamento: MyString

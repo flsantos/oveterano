@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/oveterano/svn/!svn/ver/31/app/controllers
+END
+professores_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/controllers/professores_controller.rb
+END
+inicio_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/oveterano/svn/!svn/ver/14/app/controllers/inicio_controller.rb
+END
+usuarios_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/46/app/controllers/usuarios_controller.rb
+END
+anexo_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/oveterano/svn/!svn/ver/46/app/controllers/anexo_controller.rb
+END
+disciplinasearches_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/oveterano/svn/!svn/ver/46/app/controllers/disciplinasearches_controller.rb
+END
+ofertasearches_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/46/app/controllers/ofertasearches_controller.rb
+END
+gradeshorarias_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/oveterano/svn/!svn/ver/19/app/controllers/gradeshorarias_controller.rb
+END
+professorsearches_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/oveterano/svn/!svn/ver/46/app/controllers/professorsearches_controller.rb
+END
+disciplinas_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/46/app/controllers/disciplinas_controller.rb
+END
+assets_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/oveterano/svn/!svn/ver/46/app/controllers/assets_controller.rb
+END
+ofertas_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/oveterano/svn/!svn/ver/1/app/controllers/ofertas_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/1/app/controllers/application_controller.rb
+END
+grades_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/oveterano/svn/!svn/ver/46/app/controllers/grades_controller.rb
+END
+sessions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/oveterano/svn/!svn/ver/23/app/controllers/sessions_controller.rb
+END
+contato_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/13/app/controllers/contato_controller.rb
+END
+posts_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/oveterano/svn/!svn/ver/1/app/controllers/posts_controller.rb
+END

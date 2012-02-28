@@ -1,0 +1,25 @@
+
+
+	<div id='calendar'></div>
+	
+	<div id="event_edit_container">
+		<form>
+			<input type="hidden" />
+			<ul>
+				<li>
+					<!-- Essa funcao pegaTurmas(this.value) está no grade.js -->	
+					<label for="disciplina">Disciplina: </label><select id="disc" name="disciplina" onChange="pegaTurmas(this.value, getTurmaClicked())"><option value="">Escolha uma disciplina</option></select>
+				</li>
+	
+				
+				<li>
+					<label for="turmas">Turma: </label><select id="turma" name="turma"><option value="">Escolha uma disciplina</option></select>
+				</li>
+
+				
+				<li>
+					<span>Confirmar seleção dessa disciplina? </span>
+				</li>
+			</ul>
+		</form>
+	</div>

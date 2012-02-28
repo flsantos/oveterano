@@ -1,0 +1,22 @@
+<% content_for (:head) do %>
+	<%= stylesheet_link_tag 'oferta' %>
+<% end %>
+
+<div class="box bg">
+	<h1><%= @disciplina.nome%> </h1>
+	
+	
+	<% @ofertas.each do |oferta| %>
+		<div class="oferta">
+		    <div style ="width:100px;"><strong>Turma: </strong><%= oferta.turma %> </div>
+		    <div style ="width:100px;"><strong>Turno: </strong><%= oferta.turno %> </div>
+		    <div style ="width:450px;"><strong>Professores: </strong><br /><%= oferta.professores.collect {|p| p.nome + "<br />"} %> </div>
+		    <div style ="width:300px;"><strong>Horário: </strong><br /> <%= oferta.horarios.collect {|p| getDia(p.dia) + " " + p.horario_ini + " " + p.horario_fim + "<br />"} %> </div>
+		</div>
+	<% end %>
+	
+	
+	<div id="button_voltar" style="padding-top:50px;">
+		<a href="javascript:history.back()">Voltar</a>
+	</div>
+</div>

@@ -1,0 +1,67 @@
+#grade_agenda {
+	min-height:755px;
+}
+
+
+.wc-scrollable-grid {
+    max-height:723px;
+    min-height:723px;
+}
+
+
+#grade_control {
+	margin :20px;	
+}
+
+
+#form_nova_grade {
+	min-height:260px;
+	text-align:center;
+	margin:20px
+}
+
+#titulo_grade {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 21px;
+	color: #464646;
+	font-weight:bold;
+	font-size:11px;
+	margin-bottom:20px;
+}
+
+
+
+#button_enviar {
+    margin-top:20px;
+    margin-bottom:30px;
+    margin-left:335px;
+}
+
+#list_grades {
+	text-align:center;
+	font-size:12px;
+}
+
+#form_nova_grade td, th  {
+}
+
+
+#nome_grade, #semestre_select, #grade_nome, #grade_semestre {
+	width:200px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	width: 300px;
+	height: 33px;
+	line-height:33px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #999999;
+	text-align:left;
+}
+#semestre_select, #grade_semestre {
+	width: 303px;
+	height: 36px;
+	padding: 7px 7px 7px 0;
+}

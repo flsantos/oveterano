@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/oveterano/svn/!svn/ver/14/app/helpers
+END
+assets_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/oveterano/svn/!svn/ver/43/app/helpers/assets_helper.rb
+END
+application_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/1/app/helpers/application_helper.rb
+END
+sessions_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/app/helpers/sessions_helper.rb
+END
+usuarios_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/oveterano/svn/!svn/ver/1/app/helpers/usuarios_helper.rb
+END

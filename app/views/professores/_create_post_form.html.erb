@@ -1,0 +1,9 @@
+<div class="new_post">
+	<% form_remote_tag(:url => {:action => "create_posts", :id => params[:id]}) do %>
+	   <%= label_tag(:mensagem, "O que você acha desse Professor?") %><br />
+	   <div id="campo_editor">
+	   		<%= text_area_tag(:mensagem, nil, :size => "112x12") %><br />
+	   </div>  
+	   <div style="margin:20px;"> <%= image_submit_tag("botao_enviar2.png") %> </div>
+	<% end %> 
+</div>

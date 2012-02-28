@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/oveterano/svn/!svn/ver/31/app/views/usuarios
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/46/app/views/usuarios/edit.html.erb
+END
+recuperar.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/oveterano/svn/!svn/ver/37/app/views/usuarios/recuperar.html.erb
+END
+_form_usuario.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/oveterano/svn/!svn/ver/37/app/views/usuarios/_form_usuario.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/oveterano/svn/!svn/ver/46/app/views/usuarios/new.html.erb
+END
+_usuario_bar.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/oveterano/svn/!svn/ver/46/app/views/usuarios/_usuario_bar.html.erb
+END
+_form_usuario_edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/oveterano/svn/!svn/ver/46/app/views/usuarios/_form_usuario_edit.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/oveterano/svn/!svn/ver/46/app/views/usuarios/show.html.erb
+END
+reset.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/oveterano/svn/!svn/ver/37/app/views/usuarios/reset.html.erb
+END

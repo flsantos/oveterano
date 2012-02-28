@@ -1,0 +1,71 @@
+	
+		<div id="ofertasearch_form_In">
+			<% remote_form_for :ofertasearch, @ofertasearch, :url => { :action => "get_horario"}, :html => {:id => "form_ofertasearch"} do |f| %>
+			<%= f.error_messages %>
+			
+
+            <%= f.label :campus, "Campus" %>
+            <div class="combo_box">
+                <%= f.select(:campus, Campus.all.map { |c| [c.nome] },  :include_blank => true )%>
+				<% if params[:campus] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_campus").val("<%=params[:campus]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+            <%= f.label :departamento %>
+            <div id="select_x_y" class="combo_box" title="Buscar disciplinas que pertencem a esse departamento">
+                <%= f.select(:departamento, Departamento.find(:all, :order => "nome ASC").map { |c| [c.nome] }, :include_blank => true) %>
+				<% if params[:departamento] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_departamento").val("<%=params[:departamento]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+            <%= f.label :professor %>
+            <div class="combo_box" title="Buscar disciplinas que são ministradas por esse professor">
+                <%= f.select(:professor, Professor.find(:all, :order => "nome ASC").map { |c| [c.nome] }, :include_blank => true) %>
+				<% if params[:professor] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_professor").val("<%=params[:professor]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+            <%= f.label :curso_fluxo , "Curso (Fluxo)" %>
+            <div class="combo_box" title="Buscar disciplinas que estão no Fluxo deste curso, em geral, as obrigatórias">
+                <%= f.select(:curso_fluxo, options_for_select(Curso.find(:all, :order => "nome ASC").map { |c| ["#{c.nome} (#{c.turno}/#{c.modalidade})", c.nome] }, 1), :include_blank => true) %>
+				<% if params[:curso_fluxo] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_curso_fluxo").val("<%=params[:curso_fluxo]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+            <%= f.label :curso_curriculo , "Curso (Currículo)" %>
+            <div class="combo_box" title="Buscar disciplinas que estão no Currículo deste curso, inclui optativas e obrigatórias">
+                <%= f.select(:curso_curriculo, options_for_select(Curso.find(:all, :order => "nome ASC").map { |c| ["#{c.nome} (#{c.turno}/#{c.modalidade})", c.nome] }, 1), :include_blank => true) %>
+				<% if params[:curso_curriculo] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_curso_curriculo").val("<%=params[:curso_curriculo]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+            <%= f.label :disciplina %>
+            <div class="combo_box">
+                <%= f.select(:disciplina, Disciplina.find(:all, :order => "nome ASC").map { |c| [c.nome] }, :include_blank => true) %>
+				<% if params[:disciplina] %><% content_for :javascripts do %><script>
+						jQuery("#ofertasearch_disciplina").val("<%=params[:disciplina]%>").attr('selected',true);
+				</script><% end %><% end %>
+            </div>
+
+
+            <div id="botao_buscar" class="shadow_botao">
+            	<%= f.submit ''%>
+             </div>
+
+
+             <!-- MODELO DE BOTÃO
+             <div id="botao_buscar" class="shadow_botao" style="width:37px; height:30px; margin-top:260px; margin-left:0px; background-color:#F1B80A; color:white; font-size:20px; border:1px solid #C79809; -moz-border-radius:5px; padding-top:5px;text-align:left;">
+               &nbsp;&nbsp;?
+             </div>
+             -->
+
+			<% end %>
+		 </div>
+
+
+

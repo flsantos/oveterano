@@ -1,0 +1,90 @@
+
+<style type="text/css">
+	.bold {
+		font-weight:bold;
+	}
+	
+	.titulo_texto {
+		font-size:20px;
+		text-align:center;
+	}
+	
+	.titulo_texto2 {
+		font-size:16px;
+		text-align:center;
+	}
+	#condicoes {
+		margin-left:15px;
+		list-style-type:circle;
+	}
+	#termos {
+		margin-left:15px;
+		list-style-type:decimal;
+	}
+</style>
+
+
+<div id="termos_de_uso_box" style="display:none; text-align:center;">
+<div style="width: 700px;">
+	<div class ="titulo_texto bold"> Termos de Uso</div>
+	
+	<p> 
+	<br/>
+	Ao se cadastrar ou utilizar qualquer serviço do portal Oveterano, você está concordando integralmente com os seguintes termos e condições (‘Termos de Uso’):
+	<br/>
+	<br/>
+<ol id="termos"> 
+<li>
+O Usuário deve ter, ao menos, 18 anos completos e ser plenamente capaz de entender os Termos de Uso.
+</li>
+<li>
+Qualquer serviço prestado pelo portal Oveterano não deve ser utilizado para propósito ilegal ou não autorizado. Caso venha a ocorrer, a responsabilidade das ações é inteiramente do usuário que a executou.
+</li>
+<li>
+Toda a responsabilidade sobre o conteudo produzido ou publicado no portal é de inteira responsabilidade do usuário que o produziu ou publicou.
+</li>
+<li>
+Ao se cadastrar, o usuário deve fornecer um email válido, que será utilizado para eventuais comunicações.
+</li>
+<li>
+O usuário é responsável por manter sua senha segura e não compartilha-la com ninguém.
+</li>
+<li>
+Qualquer atividade, mesmo que não exija publicação do nome do seu autor, será vinculada ao usuário que a produziu ou publicou.
+</li>
+<li>
+Qualquer erro, abuso, bug, divergência ou atividade estranha deve ser imediatamente reportada aos responsáveis pela manutenção do site, atraves dos  links de contato ou de denúncias.
+</li>
+<li>
+O portal Oveterano não se responsabiliza pela guarda dos dados, fotos, textos ou qualquer outra informação ou arquivo que o site venha a hospedar. A responsabilidade sobre tais documentos cai sobre quem o postou.
+</li>
+<li>
+O conteudo de qualquer publicidade ou anúncio que venha a ser divulgado no portal é de inteira responsabilidade dos anunciantes. Oveterano não faz intermediações financeiras ou comerciais entre as partes envolvidas.
+</ol>
+<br/>
+
+<div class="titulo_texto2 bold"> Condições Gerais</div>
+
+
+<div>
+<ol id="condicoes">
+<li>
+	Reservamo-nos o direito de modificar ou encerrar o serviço do portal Oveterano por qualquer motivo, sem aviso prévio a qualquer momento.
+</li>
+<li>
+	Reservamo-nos o direito de alterar estes Termos de Uso a qualquer momento, sem qualquer aviso.
+</li>
+<li>
+	Reservamo-nos o direito de encerrar a conta de qualquer usuário que não esteja de acordo com os Termos de Uso ou que tenha qualquer comportamento inadequado, a critério da administração.
+</li>
+<li>
+	Reservamo-nos o direito de recusar serviço a qualquer pessoa por qualquer motivo, a qualquer momento.
+</li>
+<li>
+	Reservamo-nos o direito de reclamar nomes (usernames) em nome de empresas ou pessoas singulares que têm direito legal ou marca sobre os nomes de usuários.
+</li>
+</ol>
+</div>
+	
+</div>		
+</div>

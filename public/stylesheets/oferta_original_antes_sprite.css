@@ -1,0 +1,153 @@
+#ofertas {
+	text-align:center;
+	margin-bottom:20px;
+	margin-top:1px;
+}
+
+
+.oferta {
+	margin-left:15%;
+	margin-bottom:10px;
+    margin-top:15px;
+	border-bottom: 1px solid #E1E1E1;
+    text-align:left;
+}
+
+.info_oferta {
+	font-size:12px;
+	width:600px;
+	/*margin-bottom:100px;
+    margin-top:15px;
+	border: 1px solid #E1E1E1;
+	*/
+}
+
+.info_oferta td {
+   border:1px solid #ccc;
+}
+
+
+
+.oferta:hover #oferta_hover {
+	font-weight:bold;
+}
+
+#numero_disc {
+	margin:20px;
+	font-weight:bolder;
+}
+
+#button_voltar {
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#ofertasearch_form {
+display:block;	
+min-height:700px;
+margin-top:40px;
+height:auto;
+}	
+
+#oferta_form_all {
+    
+}
+#search_form {
+	float:left;
+	position:absolute;
+    margin-top:30px;
+}
+#agenda {
+	margin-top:15px;
+	float:right;
+	/*width:800px;*/
+	width:640px;
+}
+
+
+#ofertasearch_form_In select {
+	width:150px;
+}
+
+.combo_box {
+	border: 1px solid #C8C8C8;
+	width: 150px;
+	height:25px;
+	background-color:#FFF;
+	margin-left:5px;
+    margin-bottom:35px;
+    box-shadow:0 0 5px #888888;
+    -moz-box-shadow:0 0 5px #888888;
+    -webkit-box-shadow:0 0 5px #888888;
+
+}
+#ofertasearch_campus, #ofertasearch_departamento, #ofertasearch_professor, #ofertasearch_curso_fluxo, #ofertasearch_curso_curriculo, #ofertasearch_disciplina {
+	height: 25px;
+	border:none;
+	padding:4px;
+}
+
+.info {
+border:1px solid #E1E1E1;
+padding:10px;
+padding-bottom:15px;
+width:500px;
+margin-top:10px;
+min-height:115px;
+}
+
+
+div#botao_buscar {
+    text-align:center;
+    font-family:Tahoma,Helvetica,sans-serif;
+    font-size:22px;
+    font-weight:bold;
+    margin: 50px auto auto 365px;
+}
+
+#ofertasearch_submit {
+	background-image: url(../images/botao_buscar2.png); /** sprite-ref: style; sprite-alignment: no-repeat */
+	background-color: #FFFFFF;
+	border:none;
+	height: 27px;
+	width:77px;
+	cursor:pointer;
+}
+
+div.botao_ajuda {
+    text-align:center;
+    font-family:Tahoma,Helvetica,sans-serif;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+div#botao_buscar span {
+    border: 1px solid #C19409;
+    margin-right:3px;
+    padding:2px 8px;
+    background-position:bottom;
+    text-decoration: none;
+    color: #666;
+}
+
+div#botao_buscar span:hover, div#botao_buscar span:active {
+    border: 1px solid #C19409;
+    background-image:none;
+    background-color:#F1B80A;
+    color: #fff;
+}
+
+.info_oferta ul{
+	
+}
+
+.info_oferta ul li{
+	float:left;
+	margin-right: 20px;
+}
+	
+#minhas_grades a {
+	text-decoration:none;
+}
+

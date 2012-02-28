@@ -1,0 +1,73 @@
+
+    <% content_for :stylesheets do %>
+        <%= stylesheet_link_tag 'professor', 'pagination' %>
+    <% end %>
+
+    <% content_for :javascripts do %>
+        <%= javascript_include_tag 'effects', 'jquery.ba-url.min', 'pagination_history', :cache => true %>
+		<script>
+			function getOfertas() {
+				var url = "/ofertas/buscar?";
+				url = url + jQuery.param({horario:[],
+									   campus:"",
+									   departamento:"",
+									   professor:"<%= @professor.nome %>",
+									   curso_fluxo:"",
+									   curso_curriculo:"",
+									   disciplina:""
+									  });	
+				window.location = url;	
+			}
+		</script>
+    <% end %>
+
+
+    <div class="box bg" style="padding-bottom:30px;">
+        <div id="titulo_professor">
+        	<div title="Ofertas desse professor"><a href="#" onclick="getOfertas()"><div style="text-align:center; width:64px; height:100px; margin-left:10px; float:left;"> <%= image_tag ("agenda_icon2.png")%><br/> Ofertas </div> </a></div>
+            <div class="titulo" style="width:500px;"><%= Professor.find(params[:id]).nome %></div>
+        </div>
+
+        <% if logged_in? %>
+            <div id="likedislike">
+                <br />
+				<div id="votos">
+	               	<div id="likeanddislike">
+	                	<%= link_to_remote "<div title=\"Gostei desse professor\" class=\"likes\" id=\"like\"> <img alt=\"gostei\" src=\"/images/like.png\"> <span>Gostei</span> </div>", :update => "nota_avaliacao", :url => {:controller => :professores, :action => :like, :id => params[:id] } %>
+	               		<%= link_to_remote "<div title=\"Não gostei desse professor\" class=\"likes\" id=\"dislike\"><img alt=\"gostei\" src=\"/images/dislike.png\"></div>", :update => "nota_avaliacao", :url => {:controller => :professores, :action => :dislike, :id => params[:id] }%>
+						<div style="clearfix"></div>
+					</div>
+				</div>
+				<div id="nota_avaliacao" style="margin-top:10px;" class="fundo1">
+	                <strong>Pontuação: <%= @result.split("<br/>")[0].split[0]%></strong><br/>
+					<%= image_tag("like.png")%> : <%=@votosLike%><br/>
+					<%= image_tag("dislike.png")%> : <%=@votosDislike%><br/>
+					<!--Total de votos: <%= @result.split("<br/>")[0].split[1]%><br/>-->
+				</div>
+				
+                <%= render :partial => "create_post_form" %>
+            </div>
+        <% else %>
+            <div id="faca_login">
+                <p> Faça o <a rel="facebox" href="#login_info" title="Logue no sistema">login</a> ou <%= link_to "crie uma conta", signup_path, { :title => "Cadastre-se" } %> para comentar sobre esse professor</p>
+            </div>
+        <% end %>
+
+        <div id="posts">
+        	<div id="postsIn" class="clearfix">
+	            <% if @posts.any? %>
+					<div>
+	                    <%= render :partial => 'posts' %>
+					</div>
+					<div id="sem_comentario" style="text-align:center; margin:30px;"></div>
+	            <% else %>
+					<div id="sem_comentario" style="text-align:center; margin:30px;">
+	                    <p> Esse professor ainda não possui nenhum comentário</p>
+					</div>
+	            <% end %>
+				<div style="clear:both;"></div>
+			</div>
+        </div>
+    </div>
+
+

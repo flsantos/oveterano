@@ -1,0 +1,62 @@
+	<% form_for (@usuario) , :html => { :multipart => true } do |f| %>
+			<!--<% flash.each do |name, msg| %>
+	   		    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	 		<% end %>-->
+			<% if f.error_messages.any? %>
+				<div id="flash_error">
+					<p> <%= error_messages_for :usuario, :header_message => "", :message => "" %> </p>
+				</div>
+			<% end %>
+			<ul></li>
+				<% if (@usuario.avatar.url != nil)%>
+					<div id="avatar_image">
+						<%= image_tag @usuario.avatar.url(:medium) %><br/>
+					</div>
+				<% end %>
+			<ul></ul>
+			<ul><li>
+				<div id="avatar_input">
+				<%= f.label :avatar, 'Foto: ' %>
+				<%= f.file_field :avatar %>
+				</div>
+			</li></ul>
+			<ul><li>
+				<%= f.label :nome, 'Nome: ' %>
+				<%= f.text_field :nome%>
+			</li></ul>
+			
+			<ul><li>
+			 	<%= f.label :curso_id , "Curso:" %>
+				<%= f.select(:curso_id, options_for_select(Curso.find(:all, :order => "nome ASC").map { |c| ["#{c.nome} (#{c.turno}/#{c.modalidade})", c.id] }, @usuario.curso_id), :include_blank => true) %>
+         	</li></ul>
+			
+			<ul><li>
+				<%= f.label :semestre, 'Semestre' %>
+			    <%= f.select(:semestre, options_for_select(getSemestres, :selected => @usuario.semestre ), :include_blank => true) %>
+			</li></ul>
+		
+			<ul><li>
+				<%= f.label :email, 'Email: ' %>
+				<%= f.text_field :email %>
+			</li></ul>
+			
+			<ul><li>
+				<%= f.label :password, 'Senha: ' %>
+				<%= f.password_field :password %>
+			</li></ul>
+			
+			<ul><li>
+				<%= f.label :password_confirmation, 'Confirme a Senha: ' %>
+				<%= f.password_field :password_confirmation %>
+			</li></ul>
+			
+			
+	
+				
+	
+			<div id="button_enviar" class="shadow_botao">
+				<%= image_submit_tag "botao_enviar2.png",:width => "77px", :height => "27px" %>
+			</div>
+      
+	
+	<% end %>

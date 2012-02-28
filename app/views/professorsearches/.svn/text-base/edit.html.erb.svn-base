@@ -1,0 +1,28 @@
+<h1>Editing professorsearch</h1>
+
+<% form_for(@professorsearch) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </p>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :disciplina %><br />
+    <%= f.text_field :disciplina %>
+  </p>
+  <p>
+    <%= f.label :departamento %><br />
+    <%= f.text_field :departamento %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @professorsearch %> |
+<%= link_to 'Back', professorsearches_path %>

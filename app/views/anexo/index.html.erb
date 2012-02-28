@@ -1,0 +1,33 @@
+	<% content_for :stylesheets do %>
+    	<%= stylesheet_link_tag 'disciplina' %>
+	<% end %>
+
+	
+
+    <div class="box bg">
+    	
+		<div id="anexar">
+	    	<div id="titulo_anexar" class="titulo">
+	    		Documentos anexados
+	    	</div>
+			
+			<div id="list_disciplinas">
+				<% form_tag :action => "redir" do %>
+					<%= label_tag :disciplina_select, "Disciplina:"%>
+		            <div class="combo_box">
+		                <%= select_tag(:disciplina_select, options_for_select(Disciplina.find(:all, :order => "nome ASC").map { |c| ["#{c.nome}", c.id] }.insert(0, ''), 0), :include_blank => true) %>
+		            </div>
+					
+					<div id="button_enviar" class="shadow_botao">
+						<%= image_submit_tag "botao_buscar2.png",:width => "77px", :height => "27px" %>
+					</div>
+					
+				<% end %>
+				
+			</div>
+		
+		
+    </div>
+
+
+

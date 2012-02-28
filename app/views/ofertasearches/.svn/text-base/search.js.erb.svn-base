@@ -1,0 +1,2 @@
+//Este arquivo não está mais sendo utilizado
+jQuery("#ofertas").html("<div id='numero_disc'>Total de disciplinas encontradas: <%= getOfertasSemDisciplinasRepetidas(@ofertas_sem_pag).size %></div> <%= escape_javascript(render("ofertas")) %> <%= escape_javascript(render("paginate")) %>");
