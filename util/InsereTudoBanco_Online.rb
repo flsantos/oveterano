@@ -43,6 +43,18 @@
               return 6
       end
     end
+    
+    def completa3Zeros(codigo)
+      str = codigo.to_s
+      num = str.size
+      if (num > 3)
+        return str
+      else
+        str = "00" + str
+        str = str[-3..10]
+        return str
+      end
+    end
   
      def getDiaSemanaModificado(dia) 
        case dia

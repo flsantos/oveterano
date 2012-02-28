@@ -1,7 +1,7 @@
 class CreateDepartamentos < ActiveRecord::Migration
   def self.up
     create_table :departamentos do |t|
-      t.integer :codigo
+      t.string :codigo
       t.string :sigla
       t.string :nome
 
