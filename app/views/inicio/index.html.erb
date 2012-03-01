@@ -7,7 +7,7 @@
 							<div class="col-1 aligncenter article">
 								<h5>Evite buracos no seu horário</h5>
                                 <br />
-								<%= image_tag("calendario.png")%>
+								<%link_to :controller => "ofertas", :action => "buscar" do%>  <%= image_tag("calendario.png") %> <%end%>
 								<br/>
                                 <p> Evite buracos na sua grade horária, aproveite ao máximo o seu tempo. Oveterano.com te ajuda a encontrar disciplinas buscando pelo horário </p>
 
@@ -15,14 +15,14 @@
 							<div class="col-1 aligncenter article">
 								<h5>Encontre os professores certos</h5>
                                 <br />
-								<%= image_tag("teacher.png")%>
+								<%link_to :controller => "professor", :action => "buscar" do%> <%= image_tag("teacher.png")%> <%end%>
 								<br/>
                                 <p>Tenha bons professores. Oveterano.com vai te indicar os melhores professores da universidade, pra que você aprenda e se inspire.</p>
                             </div>
 							<div class="col-1 aligncenter article">
 								<h5>Encontre as disciplinas certas</h5>
                                 <br />
-								<%= image_tag("disciplinas.png")%>
+								<%link_to :controller => "disciplina", :action => "buscar" do%><%= image_tag("disciplinas.png")%><%end%>
 								<br/>
                                 <p>Procure o que te interessa. Não entre em uma disciplina sem ter noção do que estudará o semestre inteiro. Veja comentários e dicas em Oveterano.com</p>
 							</div>
