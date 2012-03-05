@@ -185,6 +185,8 @@ class GradesController < ApplicationController
     
     diaCerto = evento.inicio.wday
     tempoCerto = Time.now
+    inicioDaSemana = tempoCerto
+    fimDaSemana = tempoCerto
     
     if (diaCerto > 2)
       while (tempoCerto.wday != diaCerto)
@@ -196,11 +198,9 @@ class GradesController < ApplicationController
       end
     end
     
-    inicioDaSemana = Time.new
     while ( inicioDaSemana.wday != 1)
       inicioDaSemana = inicioDaSemana.advance(:days => -1)
     end
-    fimDaSemana = Time.new
     while ( fimDaSemana.wday != 0 )
       fimDaSemana = fimDaSemana.advance(:days => 1)
     end
@@ -224,6 +224,8 @@ class GradesController < ApplicationController
   def encontraDiaCerto(diaCerto)
     
      tempoCerto = Time.now
+     inicioDaSemana = tempoCerto
+     fimDaSemana = tempoCerto
     
     if (diaCerto > 2)
       while (tempoCerto.wday != diaCerto)
@@ -235,11 +237,10 @@ class GradesController < ApplicationController
       end
     end
     
-    inicioDaSemana = Time.new
     while ( inicioDaSemana.wday != 1)
       inicioDaSemana = inicioDaSemana.advance(:days => -1)
     end
-    fimDaSemana = Time.new
+    
     while ( fimDaSemana.wday != 0 )
       fimDaSemana = fimDaSemana.advance(:days => 1)
     end
